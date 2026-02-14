@@ -1,24 +1,32 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import type { Feature, FeatureCollection, LineString, Point, Polygon } from "geojson";
+import type {
+  ReadyToPlotFarmStatus,
+  ReadyToPlotFirePoint
+} from "@/lib/ready-to-plot-types";
 
-type CropType = "almond" | "walnut" | "grape";
 type ReportType = "embers" | "spot-fire" | "wind-shear" | "smoke-smell";
 
 type FarmProps = {
-  acres: number;
-  crop: CropType;
-  name: string;
-  risk: number;
+  cdl_class_code: number | null;
+  crop_type: string;
+  farm_id: string;
+  farm_name: string;
+  hour_utc: string;
+  risk_level: string;
+  risk_score: number;
+  top_driver: string;
 };
 
-type HotspotProps = {
-  heat: number;
-  name: string;
-  wind: number;
+type FireProps = {
+  confidence: number;
+  frp: number;
+  id: string;
+  risk_hint: string;
+  time_utc: string;
 };
 
 type ReportProps = {
@@ -27,6 +35,19 @@ type ReportProps = {
   severity: number;
   time: string;
   type: ReportType;
+};
+
+type LayerVisibility = {
+  farms: boolean;
+  fires: boolean;
+  prediction: boolean;
+  reports: boolean;
+  vectors: boolean;
+};
+
+type OperationsMapProps = {
+  farmStatus: ReadyToPlotFarmStatus[];
+  firePoints: ReadyToPlotFirePoint[];
 };
 
 const REPORT_TYPES: Array<{
@@ -41,182 +62,18 @@ const REPORT_TYPES: Array<{
   { type: "smoke-smell", label: "Smoke Smell", severity: 57, note: "Strong smoke odor in active orchard rows." }
 ];
 
-const FARM_BOUNDARIES: FeatureCollection<Polygon, FarmProps> = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: { name: "Orchard Block 7A", crop: "almond", acres: 420, risk: 78 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            [-121.6704, 39.157],
-            [-121.5958, 39.157],
-            [-121.5958, 39.1116],
-            [-121.6704, 39.1116],
-            [-121.6704, 39.157]
-          ]
-        ]
-      }
-    },
-    {
-      type: "Feature",
-      properties: { name: "Walnut Block 4B", crop: "walnut", acres: 305, risk: 64 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            [-121.748, 39.122],
-            [-121.6715, 39.122],
-            [-121.6715, 39.0758],
-            [-121.748, 39.0758],
-            [-121.748, 39.122]
-          ]
-        ]
-      }
-    },
-    {
-      type: "Feature",
-      properties: { name: "Vineyard South Lot", crop: "grape", acres: 180, risk: 71 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            [-121.6132, 39.0845],
-            [-121.5452, 39.0845],
-            [-121.5452, 39.0385],
-            [-121.6132, 39.0385],
-            [-121.6132, 39.0845]
-          ]
-        ]
-      }
-    }
-  ]
-};
-
-const HOTSPOTS: FeatureCollection<Point, HotspotProps> = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: { name: "Feather South Rim", heat: 89, wind: 22 },
-      geometry: { type: "Point", coordinates: [-121.6755, 39.0252] }
-    },
-    {
-      type: "Feature",
-      properties: { name: "West Levee Edge", heat: 74, wind: 18 },
-      geometry: { type: "Point", coordinates: [-121.786, 39.082] }
-    },
-    {
-      type: "Feature",
-      properties: { name: "Bogue Front", heat: 82, wind: 25 },
-      geometry: { type: "Point", coordinates: [-121.587, 39.0412] }
-    }
-  ]
-};
-
-const SMOKE_VECTORS: FeatureCollection<LineString, { id: string; speed: number }> = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: { id: "v1", speed: 14 },
-      geometry: {
-        type: "LineString",
-        coordinates: [
-          [-121.781, 39.03],
-          [-121.705, 39.084],
-          [-121.62, 39.11],
-          [-121.565, 39.127]
-        ]
-      }
-    },
-    {
-      type: "Feature",
-      properties: { id: "v2", speed: 19 },
-      geometry: {
-        type: "LineString",
-        coordinates: [
-          [-121.704, 39.022],
-          [-121.654, 39.067],
-          [-121.585, 39.084],
-          [-121.53, 39.104]
-        ]
-      }
-    }
-  ]
-};
-
-const FIRE_PATH_PREDICTION: FeatureCollection<Polygon, { eta: string; name: string }> = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: { name: "Predicted Spread Cone", eta: "6h" },
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            [-121.741, 39.009],
-            [-121.756, 39.071],
-            [-121.731, 39.132],
-            [-121.682, 39.178],
-            [-121.598, 39.184],
-            [-121.54, 39.147],
-            [-121.501, 39.097],
-            [-121.504, 39.049],
-            [-121.559, 39.011],
-            [-121.651, 38.995],
-            [-121.741, 39.009]
-          ]
-        ]
-      }
-    }
-  ]
-};
-
-const INITIAL_REPORTS: FeatureCollection<Point, ReportProps> = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: {
-        id: "r1",
-        type: "smoke-smell",
-        severity: 55,
-        note: "Strong smoke odor near Orchard Block 7A.",
-        time: "05:34"
-      },
-      geometry: { type: "Point", coordinates: [-121.625, 39.131] }
-    },
-    {
-      type: "Feature",
-      properties: {
-        id: "r2",
-        type: "embers",
-        severity: 76,
-        note: "Embers seen in irrigation trench line.",
-        time: "05:39"
-      },
-      geometry: { type: "Point", coordinates: [-121.701, 39.095] }
-    }
-  ]
-};
-
-type LayerVisibility = {
-  farms: boolean;
-  prediction: boolean;
-  reports: boolean;
-  vectors: boolean;
-};
-
 const LAYER_IDS: Array<{ ids: string[]; key: keyof LayerVisibility }> = [
-  { key: "farms", ids: ["farm-fill", "farm-line"] },
+  { key: "farms", ids: ["farm-points"] },
+  { key: "fires", ids: ["hotspot-points"] },
   { key: "prediction", ids: ["fire-path-fill", "fire-path-line"] },
   { key: "vectors", ids: ["smoke-vectors"] },
   { key: "reports", ids: ["report-points"] }
 ];
+
+const EMPTY_REPORTS: FeatureCollection<Point, ReportProps> = {
+  type: "FeatureCollection",
+  features: []
+};
 
 function currentTimeLabel() {
   return new Date().toLocaleTimeString("en-US", {
@@ -226,84 +83,319 @@ function currentTimeLabel() {
   });
 }
 
-export default function OperationsMap() {
+function asCoordinateArray(
+  farmStatus: ReadyToPlotFarmStatus[],
+  firePoints: ReadyToPlotFirePoint[]
+): Array<[number, number]> {
+  return [
+    ...farmStatus.map((row) => [row.lon, row.lat] as [number, number]),
+    ...firePoints.map((row) => [row.lon, row.lat] as [number, number])
+  ];
+}
+
+function getMapView(
+  farmStatus: ReadyToPlotFarmStatus[],
+  firePoints: ReadyToPlotFirePoint[]
+): { center: [number, number]; zoom: number } {
+  const coordinates = asCoordinateArray(farmStatus, firePoints);
+  if (coordinates.length === 0) {
+    return { center: [-121.64, 39.105], zoom: 10.25 };
+  }
+
+  const lons = coordinates.map((coord) => coord[0]);
+  const lats = coordinates.map((coord) => coord[1]);
+  const minLon = Math.min(...lons);
+  const maxLon = Math.max(...lons);
+  const minLat = Math.min(...lats);
+  const maxLat = Math.max(...lats);
+  const span = Math.max(maxLon - minLon, maxLat - minLat);
+
+  const center: [number, number] = [(minLon + maxLon) / 2, (minLat + maxLat) / 2];
+  const zoom =
+    span > 2.4 ? 6.2 : span > 1.4 ? 7.1 : span > 0.9 ? 8.1 : span > 0.45 ? 9 : 10.2;
+
+  return { center, zoom };
+}
+
+function buildSmokeVectors(
+  farmStatus: ReadyToPlotFarmStatus[],
+  firePoints: ReadyToPlotFirePoint[]
+): FeatureCollection<LineString, { id: string; speed: number }> {
+  if (farmStatus.length === 0 || firePoints.length === 0) {
+    return { type: "FeatureCollection", features: [] };
+  }
+
+  const topFarms = [...farmStatus]
+    .sort((a, b) => b.risk_score - a.risk_score)
+    .slice(0, 12);
+
+  const vectors: FeatureCollection<LineString, { id: string; speed: number }> = {
+    type: "FeatureCollection",
+    features: []
+  };
+
+  for (const farm of topFarms) {
+    let nearest: ReadyToPlotFirePoint | null = null;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    for (const fire of firePoints) {
+      const dLon = farm.lon - fire.lon;
+      const dLat = farm.lat - fire.lat;
+      const distance = dLon * dLon + dLat * dLat;
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearest = fire;
+      }
+    }
+
+    if (!nearest) {
+      continue;
+    }
+
+    const vectorId = `${nearest.id}-${farm.farm_id}`;
+    vectors.features.push({
+      type: "Feature",
+      properties: {
+        id: vectorId,
+        speed: Math.max(6, Math.round(farm.risk_score * 24))
+      },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [nearest.lon, nearest.lat],
+          [farm.lon, farm.lat]
+        ]
+      }
+    });
+  }
+
+  return vectors;
+}
+
+function buildPredictionArea(
+  farmStatus: ReadyToPlotFarmStatus[],
+  firePoints: ReadyToPlotFirePoint[]
+): FeatureCollection<Polygon, { eta: string; name: string }> {
+  const coordinates = asCoordinateArray(
+    [...farmStatus].sort((a, b) => b.risk_score - a.risk_score).slice(0, 24),
+    firePoints
+  );
+  if (coordinates.length < 3) {
+    return { type: "FeatureCollection", features: [] };
+  }
+
+  const lons = coordinates.map((coord) => coord[0]);
+  const lats = coordinates.map((coord) => coord[1]);
+  const minLon = Math.min(...lons);
+  const maxLon = Math.max(...lons);
+  const minLat = Math.min(...lats);
+  const maxLat = Math.max(...lats);
+  const pad = Math.max((maxLon - minLon) * 0.12, (maxLat - minLat) * 0.12, 0.06);
+
+  const polygon: FeatureCollection<Polygon, { eta: string; name: string }> = {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        properties: {
+          name: "Predicted spread envelope",
+          eta: "6h"
+        },
+        geometry: {
+          type: "Polygon",
+          coordinates: [
+            [
+              [minLon - pad, minLat - pad],
+              [maxLon + pad, minLat - pad],
+              [maxLon + pad, maxLat + pad],
+              [minLon - pad, maxLat + pad],
+              [minLon - pad, minLat - pad]
+            ]
+          ]
+        }
+      }
+    ]
+  };
+
+  return polygon;
+}
+
+function buildFarmPoints(
+  farmStatus: ReadyToPlotFarmStatus[]
+): FeatureCollection<Point, FarmProps> {
+  return {
+    type: "FeatureCollection",
+    features: farmStatus.map((farm) => ({
+      type: "Feature",
+      properties: {
+        cdl_class_code: farm.cdl_class_code,
+        crop_type: farm.crop_type,
+        farm_id: farm.farm_id,
+        farm_name: farm.farm_name,
+        hour_utc: farm.hour_utc,
+        risk_level: farm.risk_level,
+        risk_score: farm.risk_score,
+        top_driver: farm.top_driver
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [farm.lon, farm.lat]
+      }
+    }))
+  };
+}
+
+function buildFirePoints(
+  firePoints: ReadyToPlotFirePoint[]
+): FeatureCollection<Point, FireProps> {
+  return {
+    type: "FeatureCollection",
+    features: firePoints.map((fire) => ({
+      type: "Feature",
+      properties: {
+        confidence: fire.confidence,
+        frp: fire.frp,
+        id: fire.id,
+        risk_hint: fire.risk_hint,
+        time_utc: fire.time_utc
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [fire.lon, fire.lat]
+      }
+    }))
+  };
+}
+
+export default function OperationsMap({ firePoints, farmStatus }: OperationsMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const mapLoadedRef = useRef(false);
+  const reportTypeRef = useRef<ReportType>("smoke-smell");
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const missingToken = !token;
 
+  const [mapError, setMapError] = useState<string | null>(null);
   const [reportType, setReportType] = useState<ReportType>("smoke-smell");
   const [reportData, setReportData] =
-    useState<FeatureCollection<Point, ReportProps>>(INITIAL_REPORTS);
+    useState<FeatureCollection<Point, ReportProps>>(EMPTY_REPORTS);
   const [visibility, setVisibility] = useState<LayerVisibility>({
     farms: true,
+    fires: true,
     prediction: true,
     vectors: true,
     reports: true
   });
 
-  const reportTypeRef = useRef<ReportType>(reportType);
+  const view = useMemo(() => getMapView(farmStatus, firePoints), [farmStatus, firePoints]);
+  const farmPointsGeo = useMemo(() => buildFarmPoints(farmStatus), [farmStatus]);
+  const firePointsGeo = useMemo(() => buildFirePoints(firePoints), [firePoints]);
+  const smokeVectorsGeo = useMemo(
+    () => buildSmokeVectors(farmStatus, firePoints),
+    [farmStatus, firePoints]
+  );
+  const predictionGeo = useMemo(
+    () => buildPredictionArea(farmStatus, firePoints),
+    [farmStatus, firePoints]
+  );
 
   useEffect(() => {
     reportTypeRef.current = reportType;
   }, [reportType]);
 
   useEffect(() => {
-    if (!mapContainerRef.current || mapRef.current || missingToken) {
+    if (!mapContainerRef.current || mapRef.current || missingToken || !token) {
+      return;
+    }
+
+    if (!mapboxgl.supported()) {
+      queueMicrotask(() =>
+        setMapError("WebGL is unavailable in this browser, so Mapbox cannot render.")
+      );
       return;
     }
 
     mapboxgl.accessToken = token;
-    const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/satellite-streets-v12",
-      center: [-121.64, 39.105],
-      zoom: 10.25,
-      pitch: 48,
-      bearing: -14,
-      antialias: true
-    });
+
+    let map: mapboxgl.Map;
+    try {
+      map = new mapboxgl.Map({
+        container: mapContainerRef.current,
+        style: "mapbox://styles/mapbox/satellite-streets-v12",
+        center: view.center,
+        zoom: view.zoom,
+        pitch: 48,
+        bearing: -14,
+        antialias: true
+      });
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Map failed to initialize.";
+      queueMicrotask(() => setMapError(message));
+      return;
+    }
 
     mapRef.current = map;
     map.addControl(new mapboxgl.NavigationControl({ showCompass: true }), "top-right");
 
+    const resizeMap = () => {
+      map.resize();
+      map.triggerRepaint();
+    };
+    const timeoutId = window.setTimeout(resizeMap, 0);
+    window.addEventListener("resize", resizeMap);
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined" && mapContainerRef.current) {
+      resizeObserver = new ResizeObserver(() => {
+        resizeMap();
+      });
+      resizeObserver.observe(mapContainerRef.current);
+    }
+
+    const stalledLoadId = window.setTimeout(() => {
+      if (!mapLoadedRef.current) {
+        setMapError(
+          "Map style did not finish loading. Check token URL restrictions and browser WebGL."
+        );
+      }
+    }, 8000);
+
+    map.on("error", (event) => {
+      const maybeError = (event as { error?: unknown }).error;
+      const raw =
+        maybeError instanceof Error
+          ? maybeError.message
+          : typeof maybeError === "string"
+            ? maybeError
+            : "";
+      if (!raw) {
+        return;
+      }
+
+      const normalized = raw.toLowerCase();
+      const friendly =
+        normalized.includes("access token") ||
+        normalized.includes("unauthorized") ||
+        normalized.includes("forbidden")
+          ? "Mapbox rejected the token or token URL restrictions are blocking localhost."
+          : normalized.includes("webgl")
+            ? "WebGL is unavailable in this browser, so Mapbox cannot render."
+            : `Mapbox runtime error: ${raw}`;
+
+      setMapError((previous) => previous ?? friendly);
+    });
+
     map.on("load", () => {
-      map.addSource("farms", { type: "geojson", data: FARM_BOUNDARIES });
-      map.addSource("hotspots", { type: "geojson", data: HOTSPOTS });
-      map.addSource("smoke-vectors-source", { type: "geojson", data: SMOKE_VECTORS });
-      map.addSource("fire-path", { type: "geojson", data: FIRE_PATH_PREDICTION });
-      map.addSource("reports", { type: "geojson", data: INITIAL_REPORTS });
+      mapLoadedRef.current = true;
+      window.clearTimeout(stalledLoadId);
+      setMapError(null);
+      resizeMap();
 
-      map.addLayer({
-        id: "farm-fill",
-        type: "fill",
-        source: "farms",
-        paint: {
-          "fill-color": [
-            "match",
-            ["get", "crop"],
-            "almond",
-            "#1cf089",
-            "walnut",
-            "#42c8ff",
-            "grape",
-            "#efd768",
-            "#9ec2a8"
-          ],
-          "fill-opacity": 0.23
-        }
-      });
-
-      map.addLayer({
-        id: "farm-line",
-        type: "line",
-        source: "farms",
-        paint: {
-          "line-color": "#d4ffd3",
-          "line-width": 1.4,
-          "line-opacity": 0.9
-        }
-      });
+      map.addSource("farms", { type: "geojson", data: farmPointsGeo });
+      map.addSource("hotspots", { type: "geojson", data: firePointsGeo });
+      map.addSource("smoke-vectors-source", { type: "geojson", data: smokeVectorsGeo });
+      map.addSource("fire-path", { type: "geojson", data: predictionGeo });
+      map.addSource("reports", { type: "geojson", data: EMPTY_REPORTS });
 
       map.addLayer({
         id: "fire-path-fill",
@@ -311,7 +403,7 @@ export default function OperationsMap() {
         source: "fire-path",
         paint: {
           "fill-color": "#ff6a4c",
-          "fill-opacity": 0.2
+          "fill-opacity": 0.16
         }
       });
 
@@ -321,7 +413,7 @@ export default function OperationsMap() {
         source: "fire-path",
         paint: {
           "line-color": "#ffb37f",
-          "line-width": 1.6,
+          "line-width": 1.4,
           "line-dasharray": [2.2, 1.4]
         }
       });
@@ -332,9 +424,52 @@ export default function OperationsMap() {
         source: "smoke-vectors-source",
         paint: {
           "line-color": "#49b8ff",
-          "line-width": 2.8,
-          "line-opacity": 0.75,
+          "line-width": 2.4,
+          "line-opacity": 0.72,
           "line-dasharray": [1.1, 1.8]
+        }
+      });
+
+      map.addLayer({
+        id: "farm-points",
+        type: "circle",
+        source: "farms",
+        paint: {
+          "circle-radius": [
+            "interpolate",
+            ["linear"],
+            ["get", "risk_score"],
+            0,
+            5,
+            1,
+            10
+          ],
+          "circle-color": [
+            "match",
+            ["get", "crop_type"],
+            "almond",
+            "#1cf089",
+            "walnut",
+            "#42c8ff",
+            "grape",
+            "#efd768",
+            "grapes",
+            "#efd768",
+            "mixed_ag",
+            "#8fd4a6",
+            "#97c4aa"
+          ],
+          "circle-opacity": 0.88,
+          "circle-stroke-color": [
+            "match",
+            ["get", "risk_level"],
+            "high",
+            "#ff555f",
+            "medium",
+            "#ffc46b",
+            "#c6ffd8"
+          ],
+          "circle-stroke-width": 1.4
         }
       });
 
@@ -346,25 +481,25 @@ export default function OperationsMap() {
           "circle-radius": [
             "interpolate",
             ["linear"],
-            ["get", "heat"],
-            40,
-            9,
-            100,
+            ["get", "frp"],
+            0,
+            7,
+            30,
             18
           ],
           "circle-color": [
             "interpolate",
             ["linear"],
-            ["get", "heat"],
-            40,
-            "#ffe866",
-            75,
+            ["get", "frp"],
+            0,
+            "#ffd96a",
+            10,
             "#ff9830",
-            100,
+            30,
             "#ff3a3a"
           ],
           "circle-opacity": 0.9,
-          "circle-stroke-width": 1.4,
+          "circle-stroke-width": 1.2,
           "circle-stroke-color": "#fff3cf"
         }
       });
@@ -414,23 +549,32 @@ export default function OperationsMap() {
       map.on("mouseleave", "report-points", () => {
         map.getCanvas().style.cursor = "";
       });
+      map.on("mouseenter", "farm-points", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "farm-points", () => {
+        map.getCanvas().style.cursor = "";
+      });
 
-      map.on("click", "farm-fill", (event) => {
+      map.on("click", "farm-points", (event) => {
         const feature = event.features?.[0];
-        if (!feature || feature.geometry.type !== "Polygon") {
+        if (!feature || feature.geometry.type !== "Point") {
           return;
         }
 
-        const center = feature.geometry.coordinates[0][0] as [number, number];
-        const name = String(feature.properties?.name ?? "Farm block");
-        const crop = String(feature.properties?.crop ?? "Unknown");
-        const acres = String(feature.properties?.acres ?? "N/A");
-        const risk = String(feature.properties?.risk ?? "N/A");
+        const coordinates = [...feature.geometry.coordinates] as [number, number];
+        const farmName = String(feature.properties?.farm_name ?? "Farm");
+        const crop = String(feature.properties?.crop_type ?? "Unknown");
+        const riskScore = Number(feature.properties?.risk_score ?? 0);
+        const riskLevel = String(feature.properties?.risk_level ?? "unknown");
+        const driver = String(feature.properties?.top_driver ?? "unknown");
 
         new mapboxgl.Popup({ offset: 14 })
-          .setLngLat(center)
+          .setLngLat(coordinates)
           .setHTML(
-            `<strong>${name}</strong><p>Crop: ${crop}<br/>Acres: ${acres}<br/>Risk score: ${risk}</p>`
+            `<strong>${farmName}</strong><p>Crop: ${crop}<br/>Risk: ${Math.round(
+              riskScore * 100
+            )}/100 (${riskLevel})<br/>Driver: ${driver.replace("_", " ")}</p>`
           )
           .addTo(map);
       });
@@ -442,14 +586,17 @@ export default function OperationsMap() {
         }
 
         const coordinates = [...feature.geometry.coordinates] as [number, number];
-        const name = String(feature.properties?.name ?? "Hotspot");
-        const heat = String(feature.properties?.heat ?? "N/A");
-        const wind = String(feature.properties?.wind ?? "N/A");
+        const pointId = String(feature.properties?.id ?? "fire");
+        const frp = Number(feature.properties?.frp ?? 0);
+        const confidence = Number(feature.properties?.confidence ?? 0);
+        const timeUtc = String(feature.properties?.time_utc ?? "unknown");
 
         new mapboxgl.Popup({ offset: 14 })
           .setLngLat(coordinates)
           .setHTML(
-            `<strong>${name}</strong><p>Thermal index: ${heat}/100<br/>Wind drift: ${wind} mph</p>`
+            `<strong>${pointId}</strong><p>FRP: ${frp.toFixed(
+              2
+            )}<br/>Confidence: ${(confidence * 100).toFixed(0)}%<br/>UTC: ${timeUtc}</p>`
           )
           .addTo(map);
       });
@@ -473,7 +620,7 @@ export default function OperationsMap() {
 
       map.on("click", (event) => {
         const hit = map.queryRenderedFeatures(event.point, {
-          layers: ["hotspot-points", "report-points", "farm-fill"]
+          layers: ["farm-points", "hotspot-points", "report-points"]
         });
         if (hit.length > 0) {
           return;
@@ -507,10 +654,42 @@ export default function OperationsMap() {
     });
 
     return () => {
+      window.clearTimeout(timeoutId);
+      window.clearTimeout(stalledLoadId);
+      window.removeEventListener("resize", resizeMap);
+      resizeObserver?.disconnect();
+      mapLoadedRef.current = false;
       map.remove();
       mapRef.current = null;
     };
-  }, [missingToken, token]);
+  }, [firePointsGeo, farmPointsGeo, missingToken, predictionGeo, smokeVectorsGeo, token, view]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) {
+      return;
+    }
+
+    const farmsSource = map.getSource("farms");
+    if (farmsSource) {
+      (farmsSource as mapboxgl.GeoJSONSource).setData(farmPointsGeo);
+    }
+
+    const firesSource = map.getSource("hotspots");
+    if (firesSource) {
+      (firesSource as mapboxgl.GeoJSONSource).setData(firePointsGeo);
+    }
+
+    const vectorsSource = map.getSource("smoke-vectors-source");
+    if (vectorsSource) {
+      (vectorsSource as mapboxgl.GeoJSONSource).setData(smokeVectorsGeo);
+    }
+
+    const predictionSource = map.getSource("fire-path");
+    if (predictionSource) {
+      (predictionSource as mapboxgl.GeoJSONSource).setData(predictionGeo);
+    }
+  }, [farmPointsGeo, firePointsGeo, predictionGeo, smokeVectorsGeo]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -528,7 +707,7 @@ export default function OperationsMap() {
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !map.isStyleLoaded()) {
+    if (!map) {
       return;
     }
 
@@ -556,6 +735,16 @@ export default function OperationsMap() {
   return (
     <div className="map-shell">
       <div ref={mapContainerRef} className="map-container" />
+      {mapError ? (
+        <div className="map-runtime-error" role="alert">
+          <h5>Map Load Error</h5>
+          <p>{mapError}</p>
+          <p>
+            Verify token scopes (`styles:read`, `fonts:read`) and URL restrictions
+            for `http://localhost:3000`.
+          </p>
+        </div>
+      ) : null}
 
       <div className="map-ui">
         <section className="map-control">
@@ -586,7 +775,17 @@ export default function OperationsMap() {
                   setVisibility((prev) => ({ ...prev, farms: !prev.farms }))
                 }
               />
-              Farm Boundaries
+              Farm Risk Points
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={visibility.fires}
+                onChange={() =>
+                  setVisibility((prev) => ({ ...prev, fires: !prev.fires }))
+                }
+              />
+              Active Fire Points
             </label>
             <label>
               <input
@@ -629,19 +828,19 @@ export default function OperationsMap() {
         <h4>Legend</h4>
         <p>
           <span className="legend-swatch crop" />
-          Crop boundary by crop type
+          Farm risk marker by crop type
         </p>
         <p>
           <span className="legend-swatch fire" />
-          Thermal hotspot (NASA-style intensity)
+          FIRMS hotspot (FRP-based size)
         </p>
         <p>
           <span className="legend-swatch vector" />
-          Predicted smoke drift vectors
+          Fire-to-farm smoke vectors
         </p>
         <p>
           <span className="legend-swatch path" />
-          Fire path prediction cone
+          Predicted spread envelope
         </p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
 import "./globals.css";
 
 const display = Space_Grotesk({
