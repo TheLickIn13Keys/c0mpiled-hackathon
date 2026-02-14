@@ -1,5 +1,10 @@
 import FieldCommanderDashboard from "@/components/field-commander-dashboard";
+import { loadReadyToPlotBundle } from "@/lib/ready-to-plot";
 
-export default function Home() {
-  return <FieldCommanderDashboard />;
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const readyToPlot = await loadReadyToPlotBundle();
+
+  return <FieldCommanderDashboard data={readyToPlot} />;
 }
