@@ -1,0 +1,24 @@
+{
+  "time": {
+    "risk_grain": "hourly",
+    "firms_freshness_hours": 24,
+    "risk_recompute_minutes": 60
+  },
+  "spatial": {
+    "interchange_crs": "EPSG:4326",
+    "analysis_crs": "EPSG:3310",
+    "firms_radius_km": 50,
+    "incident_fallback_radius_km": 120
+  },
+  "weights": {
+    "fire_proximity": 0.35,
+    "smoke_transport": 0.35,
+    "heat_stress": 0.2,
+    "crop_vulnerability": 0.1
+  },
+  "operations": {
+    "incident_poll_minutes": 15,
+    "weather_pull_hours": 1,
+    "cdl_refresh": "annual"
+  }
+}
