@@ -145,3 +145,75 @@ uv run streamlit run streamlit_app.py
 What it shows:
 - FIRMS tab: metadata, row count, avg FRP/confidence, map, raw table
 - Open-Meteo tab: metadata, row count, time-series chart, raw table
+
+## Crop Data (CDL) Extraction
+
+Use the local USDA CDL GeoTIFF at `crop_data/2024_30m_cdls/2024_30m_cdls.tif`.
+
+Extract crop class around sample farm points:
+
+```bash
+uv run main.py extract-cdl \
+  --input-csv samples/farm_points.csv \
+  --lat-col latitude \
+  --lon-col longitude \
+  --id-col point_id \
+  --radius-m 300 \
+  --top-k 5 \
+  --output data/raw/cdl/cdl_farm_points_2024.jsonl
+```
+
+Extract for one point only:
+
+```bash
+uv run main.py extract-cdl \
+  --lat 38.302 \
+  --lon -122.286 \
+  --point-id napa_vineyard_demo \
+  --radius-m 300 \
+  --output data/raw/cdl/cdl_single_point.jsonl
+```
+
+## Sacramento-Davis-Fairfield Refetch + Combine
+
+1. Refetch FIRMS for the area (`days` must be 1-5):
+
+```bash
+uv run main.py extract-firms \
+  --map-key "$NASA_FIRMS_MAP_KEY" \
+  --source VIIRS_SNPP_NRT \
+  --bbox=-122.8,38.0,-121.2,38.9 \
+  --days 5 \
+  --output data/raw/firms/firms_sdf_5d.jsonl
+```
+
+2. Refetch Open-Meteo for Sacramento and Fairfield, then combine:
+
+```bash
+uv run main.py extract-open-meteo --lat 38.5816 --lon -121.4944 --past-days 7 --forecast-days 2 --output data/raw/open_meteo/open_meteo_sacramento_9d.jsonl
+uv run main.py extract-open-meteo --lat 38.2494 --lon -122.0400 --past-days 7 --forecast-days 2 --output data/raw/open_meteo/open_meteo_fairfield_9d.jsonl
+cat data/raw/open_meteo/open_meteo_sacramento_9d.jsonl data/raw/open_meteo/open_meteo_fairfield_9d.jsonl > data/raw/open_meteo/open_meteo_sdf_9d.jsonl
+```
+
+3. Extract CDL around farm points:
+
+```bash
+uv run main.py extract-cdl \
+  --input-csv samples/farms_sdf_area.csv \
+  --lat-col latitude \
+  --lon-col longitude \
+  --id-col farm_id \
+  --radius-m 300 \
+  --output data/raw/cdl/cdl_sdf_points_2024.jsonl
+```
+
+4. Build app-ready plotting tables:
+
+```bash
+uv run main.py build-plot-dataset \
+  --farms-csv samples/farms_sdf_area.csv \
+  --firms-jsonl data/raw/firms/firms_sdf_5d.jsonl \
+  --open-meteo-jsonl data/raw/open_meteo/open_meteo_sdf_9d.jsonl \
+  --cdl-jsonl data/raw/cdl/cdl_sdf_points_2024.jsonl \
+  --output-dir data/processed/plot/sdf_area
+```

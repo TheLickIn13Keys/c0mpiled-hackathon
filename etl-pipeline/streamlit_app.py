@@ -11,6 +11,7 @@ import streamlit as st
 APP_ROOT = Path(__file__).resolve().parent
 FIRMS_DIR = APP_ROOT / "data" / "raw" / "firms"
 OPEN_METEO_DIR = APP_ROOT / "data" / "raw" / "open_meteo"
+CDL_DIR = APP_ROOT / "data" / "raw" / "cdl"
 
 
 def _read_jsonl(path: Path) -> pd.DataFrame:
@@ -42,9 +43,37 @@ def _safe_number(value: Any) -> float | None:
         return None
 
 
+def _list_non_empty_jsonl(directory: Path) -> list[Path]:
+    if not directory.exists():
+        return []
+    return sorted(path for path in directory.glob("*.jsonl") if path.stat().st_size > 0)
+
+
+def _show_source_overview() -> None:
+    st.subheader("Data Source Overview")
+    st.markdown(
+        """
+`NASA FIRMS`:
+- Satellite thermal anomaly detections (hotspots), near-real-time.
+- Best for identifying where fire activity likely exists.
+- Key fields: `acquired_at_utc`, `latitude`, `longitude`, `frp`, `confidence`.
+
+`Open-Meteo`:
+- Hourly weather signals for coordinates (historical + forecast windows).
+- Best for transport/context signals like wind, humidity, and heat stress.
+- Key fields: `event_hour_utc`, `temperature_2m`, `wind_speed_10m`, `wind_direction_10m`.
+
+`USDA CDL (Cropland Data Layer)`:
+- Land-cover/crop classification raster (2024 in your repo).
+- Best for understanding what crop/land class is at a farm location.
+- Key fields in this pipeline: `cdl_class_code`, `top_class_mix`, `radius_meters`.
+"""
+    )
+
+
 def _show_firms_tab() -> None:
     st.subheader("NASA FIRMS Snapshot")
-    firms_files = sorted(path for path in FIRMS_DIR.glob("*.jsonl") if path.stat().st_size > 0)
+    firms_files = _list_non_empty_jsonl(FIRMS_DIR)
     if not firms_files:
         st.info("No FIRMS snapshots found in data/raw/firms.")
         return
@@ -90,7 +119,7 @@ def _show_firms_tab() -> None:
 
 def _show_open_meteo_tab() -> None:
     st.subheader("Open-Meteo Snapshot")
-    meteo_files = sorted(path for path in OPEN_METEO_DIR.glob("*.jsonl") if path.stat().st_size > 0)
+    meteo_files = _list_non_empty_jsonl(OPEN_METEO_DIR)
     if not meteo_files:
         st.info("No Open-Meteo snapshots found in data/raw/open_meteo.")
         return
@@ -112,6 +141,9 @@ def _show_open_meteo_tab() -> None:
     if "event_hour_utc" in frame.columns:
         frame["event_hour_utc"] = pd.to_datetime(frame["event_hour_utc"], errors="coerce", utc=True)
         frame = frame.sort_values("event_hour_utc")
+
+    frame["latitude"] = frame["latitude"].apply(_safe_number)
+    frame["longitude"] = frame["longitude"].apply(_safe_number)
 
     st.metric("Rows", f"{len(frame):,}")
 
@@ -135,6 +167,48 @@ def _show_open_meteo_tab() -> None:
             line_frame = frame[["event_hour_utc", *selected_series]].set_index("event_hour_utc")
             st.line_chart(line_frame)
 
+    mappable = frame.dropna(subset=["latitude", "longitude"])[["latitude", "longitude"]].drop_duplicates()
+    if not mappable.empty:
+        st.map(mappable, zoom=6)
+
+    st.dataframe(frame, use_container_width=True)
+
+
+def _show_cdl_tab() -> None:
+    st.subheader("USDA CDL Snapshot")
+    cdl_files = _list_non_empty_jsonl(CDL_DIR)
+    if not cdl_files:
+        st.info("No CDL snapshots found in data/raw/cdl.")
+        return
+
+    file_options = {path.name: path for path in cdl_files}
+    selected_name = st.selectbox("Choose CDL file", list(file_options.keys()), index=0)
+    selected_path = file_options[selected_name]
+
+    metadata = _read_json(_matching_metadata_path(selected_path))
+    if metadata:
+        st.caption(f"Source: {metadata.get('source')} | Records: {metadata.get('record_count')}")
+        st.json(metadata)
+
+    frame = _read_jsonl(selected_path)
+    if frame.empty:
+        st.warning("Selected file has no rows.")
+        return
+
+    frame["latitude"] = frame["latitude"].apply(_safe_number)
+    frame["longitude"] = frame["longitude"].apply(_safe_number)
+
+    st.metric("Rows", f"{len(frame):,}")
+
+    if "cdl_class_code" in frame.columns:
+        counts = frame["cdl_class_code"].value_counts(dropna=False).rename_axis("cdl_class_code").reset_index(name="count")
+        st.markdown("Top Class Codes")
+        st.dataframe(counts.head(10), use_container_width=True)
+
+    mappable = frame.dropna(subset=["latitude", "longitude"])[["latitude", "longitude"]]
+    if not mappable.empty:
+        st.map(mappable, zoom=6)
+
     st.dataframe(frame, use_container_width=True)
 
 
@@ -147,12 +221,17 @@ def main() -> None:
         st.markdown("### Data folders")
         st.code(str(FIRMS_DIR))
         st.code(str(OPEN_METEO_DIR))
+        st.code(str(CDL_DIR))
 
-    tab_firms, tab_meteo = st.tabs(["FIRMS", "Open-Meteo"])
+    tab_about, tab_firms, tab_meteo, tab_cdl = st.tabs(["About Sources", "FIRMS", "Open-Meteo", "CDL"])
+    with tab_about:
+        _show_source_overview()
     with tab_firms:
         _show_firms_tab()
     with tab_meteo:
         _show_open_meteo_tab()
+    with tab_cdl:
+        _show_cdl_tab()
 
 
 if __name__ == "__main__":

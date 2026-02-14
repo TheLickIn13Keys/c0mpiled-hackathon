@@ -1,0 +1,4 @@
+farm_id,farm_name,latitude,longitude,crop_type
+sacramento_farm,Sacramento Demo Farm,38.5816,-121.4944,almond
+davis_farm,Davis Demo Farm,38.5449,-121.7405,walnut
+fairfield_farm,Fairfield Demo Farm,38.2494,-122.0400,grapes
