@@ -1,0 +1,17 @@
+{
+  "tables": {
+    "map_fire_points": {
+      "path": "data/processed/plot/sdf_area/map_fire_points.jsonl",
+      "record_count": 6
+    },
+    "map_farm_status": {
+      "path": "data/processed/plot/sdf_area/map_farm_status.jsonl",
+      "record_count": 180
+    },
+    "chart_farm_timeseries": {
+      "path": "data/processed/plot/sdf_area/chart_farm_timeseries.jsonl",
+      "record_count": 38880
+    }
+  },
+  "built_at_utc": "2026-02-14T03:28:17.596560+00:00"
+}
