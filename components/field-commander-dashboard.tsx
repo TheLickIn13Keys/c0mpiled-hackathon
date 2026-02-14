@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import LoadingSurface from "@/components/loading-surface";
+import AiGeoMitigationAdvisor from "@/components/ai-geo-mitigation-advisor";
 
 const OperationsMap = dynamic(() => import("@/components/operations-map"), {
   ssr: false,
@@ -203,6 +204,8 @@ export default function FieldCommanderDashboard() {
               ))}
             </div>
           </article>
+
+          <AiGeoMitigationAdvisor />
 
           <article className="fc-card">
             <h2>Data Fusion Stack</h2>

@@ -541,6 +541,295 @@ body {
   line-height: 1.38;
 }
 
+.ai-advisor-card {
+  position: relative;
+}
+
+.advisor-controls {
+  margin-top: 0.62rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.42rem;
+}
+
+.advisor-controls select,
+.advisor-controls button {
+  border: 1px solid rgba(112, 183, 255, 0.3);
+  border-radius: 0.54rem;
+  background: rgba(10, 24, 40, 0.78);
+  color: #d2ebff;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.45rem;
+}
+
+.advisor-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+}
+
+.advisor-controls button.primary {
+  border-color: rgba(94, 249, 255, 0.6);
+  background: rgba(20, 63, 89, 0.94);
+}
+
+.advisor-controls button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.advisor-error {
+  margin-top: 0.54rem;
+  color: #ffb4bc;
+  font-size: 0.74rem;
+}
+
+.advisor-results {
+  margin-top: 0.64rem;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.advisor-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.45rem;
+  color: #a6cae9;
+  font-size: 0.7rem;
+}
+
+.advisor-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+}
+
+.advisor-summary {
+  margin: 0;
+  color: #cae4fb;
+}
+
+.advisor-telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.advisor-telemetry span {
+  border: 1px solid rgba(123, 191, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(9, 23, 38, 0.7);
+  color: #bfe0fb;
+  font-size: 0.68rem;
+  padding: 0.26rem 0.44rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.advisor-tile-grid {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.advisor-tile {
+  border: 1px solid rgba(126, 192, 255, 0.28);
+  border-radius: 0.68rem;
+  background: linear-gradient(150deg, rgba(13, 29, 48, 0.95), rgba(16, 35, 58, 0.9));
+  color: #ddf1ff;
+  text-align: left;
+  padding: 0.48rem 0.52rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.56rem;
+  align-items: flex-start;
+}
+
+.advisor-tile-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.advisor-tile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.42rem;
+  height: 1.42rem;
+  border-radius: 0.36rem;
+  border: 1px solid rgba(158, 224, 255, 0.3);
+  background: rgba(8, 20, 35, 0.52);
+  color: #e6f6ff;
+  flex-shrink: 0;
+}
+
+.advisor-tile b {
+  display: block;
+  font-size: 0.78rem;
+}
+
+.advisor-tile small {
+  display: block;
+  margin-top: 0.24rem;
+  color: #99bddc;
+  font-size: 0.7rem;
+  line-height: 1.32;
+}
+
+.advisor-tile span {
+  border-radius: 999px;
+  border: 1px solid rgba(128, 200, 255, 0.35);
+  padding: 0.2rem 0.42rem;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  background: rgba(8, 20, 34, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.advisor-tile.high {
+  border-color: rgba(255, 126, 124, 0.6);
+  background: linear-gradient(150deg, rgba(62, 20, 26, 0.96), rgba(96, 32, 36, 0.88));
+  box-shadow: inset 0 0 0 1px rgba(255, 167, 161, 0.18);
+}
+
+.advisor-tile.medium {
+  border-color: rgba(255, 191, 110, 0.62);
+  background: linear-gradient(150deg, rgba(54, 36, 14, 0.96), rgba(84, 55, 20, 0.88));
+  box-shadow: inset 0 0 0 1px rgba(255, 215, 150, 0.16);
+}
+
+.advisor-tile.low {
+  border-color: rgba(114, 246, 181, 0.62);
+  background: linear-gradient(150deg, rgba(12, 44, 33, 0.95), rgba(18, 70, 49, 0.86));
+  box-shadow: inset 0 0 0 1px rgba(182, 255, 225, 0.14);
+}
+
+.advisor-sources {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.32rem;
+  color: #8eaecd;
+  font-size: 0.69rem;
+}
+
+.advisor-sources span {
+  color: #9fc3e6;
+}
+
+.source-note {
+  border: 1px solid rgba(124, 197, 255, 0.32);
+  border-radius: 999px;
+  padding: 0.2rem 0.42rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: rgba(10, 24, 40, 0.74);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.24rem;
+}
+
+.source-note:nth-of-type(1) {
+  color: #96e8ff;
+  border-color: rgba(93, 230, 255, 0.45);
+  background: rgba(19, 62, 80, 0.62);
+}
+
+.source-note:nth-of-type(2) {
+  color: #ffd89c;
+  border-color: rgba(255, 202, 120, 0.48);
+  background: rgba(74, 47, 14, 0.6);
+}
+
+.source-note:nth-of-type(3) {
+  color: #b5ffdf;
+  border-color: rgba(124, 255, 199, 0.46);
+  background: rgba(18, 68, 47, 0.56);
+}
+
+.advisor-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 9, 18, 0.6);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.advisor-modal {
+  width: min(540px, 100%);
+  border: 1px solid rgba(117, 191, 255, 0.34);
+  border-radius: 0.85rem;
+  background: linear-gradient(145deg, rgba(7, 18, 32, 0.98), rgba(15, 31, 52, 0.96));
+  box-shadow: 0 24px 46px rgba(2, 9, 18, 0.52);
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.64rem;
+}
+
+.advisor-modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.advisor-modal-head h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.95rem;
+}
+
+.advisor-modal-head button {
+  border: 1px solid rgba(113, 183, 255, 0.36);
+  border-radius: 0.45rem;
+  background: rgba(10, 24, 40, 0.8);
+  color: #d5edff;
+  font-size: 0.72rem;
+  padding: 0.28rem 0.44rem;
+}
+
+.advisor-modal p {
+  margin: 0;
+  color: #a9c7e5;
+  font-size: 0.79rem;
+}
+
+.advisor-modal ul {
+  list-style: none;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.advisor-modal li {
+  border-left: 2px solid rgba(112, 213, 255, 0.56);
+  padding-left: 0.5rem;
+  color: #d4ebff;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.advisor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36rem;
+}
+
+.advisor-tags span {
+  border: 1px solid rgba(120, 196, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(13, 29, 47, 0.76);
+  color: #c1e1fc;
+  font-size: 0.69rem;
+  padding: 0.24rem 0.42rem;
+}
+
 .loading-surface {
   display: grid;
   place-content: center;
@@ -618,6 +907,10 @@ body {
   }
 
   .risk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advisor-controls {
     grid-template-columns: 1fr;
   }
 
