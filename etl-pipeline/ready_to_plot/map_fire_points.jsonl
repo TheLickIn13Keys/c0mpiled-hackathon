@@ -1,0 +1,6 @@
+{"id": "fire_1", "lat": 38.21427, "lon": -121.98512, "time_utc": "2026-02-10T10:08:00+00:00", "frp": 0.43, "confidence": 0.66, "risk_hint": "low"}
+{"id": "fire_2", "lat": 38.78084, "lon": -122.04272, "time_utc": "2026-02-10T21:29:00+00:00", "frp": 10.79, "confidence": 0.66, "risk_hint": "medium"}
+{"id": "fire_3", "lat": 38.59766, "lon": -122.43269, "time_utc": "2026-02-12T20:53:00+00:00", "frp": 4.89, "confidence": 0.66, "risk_hint": "medium"}
+{"id": "fire_4", "lat": 38.01488, "lon": -122.11459, "time_utc": "2026-02-13T10:51:00+00:00", "frp": 1.29, "confidence": 0.66, "risk_hint": "low"}
+{"id": "fire_5", "lat": 38.52486, "lon": -121.84951, "time_utc": "2026-02-13T20:33:00+00:00", "frp": 6.08, "confidence": 0.66, "risk_hint": "medium"}
+{"id": "fire_6", "lat": 38.52708, "lon": -121.85085, "time_utc": "2026-02-13T20:33:00+00:00", "frp": 5.52, "confidence": 0.66, "risk_hint": "medium"}
