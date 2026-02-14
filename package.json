@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
+    "lucide-react": "^0.564.0",
     "mapbox-gl": "^3.7.0",
     "next": "^16.0.0",
     "react": "^19.2.0",

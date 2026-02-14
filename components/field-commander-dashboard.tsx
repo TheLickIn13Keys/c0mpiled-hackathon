@@ -1,8 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useState } from "react";
 import LoadingSurface from "@/components/loading-surface";
+import AiGeoMitigationAdvisor from "@/components/ai-geo-mitigation-advisor";
 import type { ReadyToPlotBundle } from "@/lib/ready-to-plot-types";
 
 const OperationsMap = dynamic(() => import("@/components/operations-map"), {
@@ -18,22 +20,57 @@ const CropResilienceScene = dynamic(
   }
 );
 
-const PERSONAS = [
-  {
-    name: "Nut Grower (Almonds / Walnuts)",
-    concern: "Energy reserve depletion from PAR blockage",
-    guidance: "Prioritize rinse windows and irrigation buffering before noon."
-  },
-  {
-    name: "Viticulturist (Grapes)",
-    concern: "Smoke taint compounds in fruit skin",
-    guidance: "Track cumulative dose and prep early harvest + barrier spray."
-  }
-] as const;
-
 type FieldCommanderDashboardProps = {
   data: ReadyToPlotBundle;
 };
+
+type MockFarmRecord = {
+  acres: number;
+  crop: string;
+  farmName: string;
+  irrigation: string;
+  locationAliases: string[];
+  locationLabel: string;
+  primaryThreats: string[];
+  recommendedActions: string[];
+  riskExposure: number;
+};
+
+const MOCK_FARM_DATA: MockFarmRecord[] = [
+  {
+    farmName: "River Bend Almond Block",
+    locationLabel: "Yuba County, CA 95991",
+    locationAliases: ["yuba", "95991", "marysville", "yuba county"],
+    crop: "Almond",
+    acres: 420,
+    irrigation: "Micro-sprinkler",
+    riskExposure: 0.38,
+    primaryThreats: ["PAR Blockage", "Heat Stress"],
+    recommendedActions: ["Irrigation Buffer Window (160 min remaining)", "Rinse Cycle Optimization"]
+  },
+  {
+    farmName: "Sutter South Vineyard",
+    locationLabel: "Sutter County, CA 95982",
+    locationAliases: ["sutter", "95982", "yuba city", "sutter county"],
+    crop: "Grape",
+    acres: 180,
+    irrigation: "Drip",
+    riskExposure: 0.3,
+    primaryThreats: ["Smoke Taint Compounds", "Ember Exposure"],
+    recommendedActions: ["Cumulative Dose Tracking", "Barrier Spray + Early Harvest Decision Gate"]
+  },
+  {
+    farmName: "Feather Walnut Unit",
+    locationLabel: "Butte County, CA 95965",
+    locationAliases: ["butte", "95965", "oroville", "butte county"],
+    crop: "Walnut",
+    acres: 305,
+    irrigation: "Flood + Drip Hybrid",
+    riskExposure: 0.44,
+    primaryThreats: ["Ash Deposition", "Canopy Heat Loading"],
+    recommendedActions: ["Canopy Cooldown Cycle", "Perimeter Ember Patrol"]
+  }
+] as const;
 
 function asLocalLabel(value: string | null) {
   if (!value) {
@@ -55,26 +92,47 @@ function asLocalLabel(value: string | null) {
 export default function FieldCommanderDashboard({ data }: FieldCommanderDashboardProps) {
   const [leftCollapsed, setLeftCollapsed] = useState(false);
   const [rightCollapsed, setRightCollapsed] = useState(false);
-  const assetRows = [
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const osintFeed = [
     {
-      id: "FIRMS",
-      asset: "Thermal Detections",
-      status: `${data.summary.activeFireClusters} LOADED`
+      user: "CAL FIRE AEU",
+      handle: "@CALFIRE_AEU",
+      initials: "CF",
+      tone: "cyan",
+      time: "05:12",
+      confidence: "0.86",
+      post: "Sprinkler Grid 17 activation confirmed by field relay. Asset request marked approved.",
+      tags: ["sprinklers", "field-ops"]
     },
     {
-      id: "RISK",
-      asset: "Farm Status Points",
-      status: `${data.farmStatus.length} ACTIVE`
+      user: "CAL FIRE Intel",
+      handle: "@CALFIRE_Intel",
+      initials: "CF",
+      tone: "amber",
+      time: "05:28",
+      confidence: "0.92",
+      post: "NASA FIRMS thermal signal crossed intensity threshold 80 near southwest perimeter.",
+      tags: ["firms", "hotspot"]
     },
     {
-      id: "TS",
-      asset: "Hourly Feature Rows",
-      status: `${data.chartRowCount} READY`
+      user: "CAL FIRE Ops",
+      handle: "@CALFIRE_Ops",
+      initials: "CF",
+      tone: "violet",
+      time: "05:41",
+      confidence: "0.89",
+      post: "Wind corridor rotated SW->NE. Current plume path intersects Yuba operational blocks.",
+      tags: ["wind-shift", "plume"]
     },
     {
-      id: "ETA",
-      asset: "Snapshot Built",
-      status: asLocalLabel(data.summary.builtAtUtc)
+      user: "CAL FIRE Region North",
+      handle: "@CALFIRE_North",
+      initials: "CF",
+      tone: "green",
+      time: "05:46",
+      confidence: "0.84",
+      post: "Rinse-window alert dispatched to almond and walnut operators ahead of heat peak.",
+      tags: ["alert", "nut-growers"]
     }
   ] as const;
 
@@ -106,9 +164,71 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
   );
   const ignitionNodes = Math.min(6, Math.max(1, Math.ceil(data.summary.highRiskFarms / 30)));
   const gridClassName = `fc-grid${leftCollapsed ? " left-collapsed" : ""}${rightCollapsed ? " right-collapsed" : ""}`;
+  const [locationQuery, setLocationQuery] = useState("Yuba County");
+  const [profileStatus, setProfileStatus] = useState<string | null>(null);
+  const [lastUpdatedAt, setLastUpdatedAt] = useState<string | null>(null);
+  const [farmDraft, setFarmDraft] = useState<{
+    acres: string;
+    crop: string;
+    farmName: string;
+    irrigation: string;
+    locationLabel: string;
+    primaryThreats: string;
+    recommendedActions: string;
+    riskExposure: string;
+  } | null>(null);
+
+  function parseLocationToMockFarm() {
+    const normalized = locationQuery.trim().toLowerCase();
+    if (!normalized) {
+      setProfileStatus("Enter a location or ZIP to parse farm data.");
+      return;
+    }
+
+    const record =
+      MOCK_FARM_DATA.find((farm) =>
+        farm.locationAliases.some((alias) => normalized.includes(alias))
+      ) ?? MOCK_FARM_DATA[0];
+
+    setFarmDraft({
+      farmName: record.farmName,
+      locationLabel: record.locationLabel,
+      crop: record.crop,
+      acres: String(record.acres),
+      irrigation: record.irrigation,
+      riskExposure: record.riskExposure.toFixed(2),
+      primaryThreats: record.primaryThreats.join("\n"),
+      recommendedActions: record.recommendedActions.join("\n")
+    });
+    setProfileStatus(`Parsed mock farm profile for ${record.locationLabel}.`);
+    setLastUpdatedAt(null);
+  }
+
+  function updateDraftField(
+    field:
+      | "acres"
+      | "crop"
+      | "farmName"
+      | "irrigation"
+      | "locationLabel"
+      | "primaryThreats"
+      | "recommendedActions"
+      | "riskExposure",
+    value: string
+  ) {
+    setFarmDraft((previous) => (previous ? { ...previous, [field]: value } : previous));
+  }
+
+  function saveFarmProfile() {
+    if (!farmDraft) {
+      return;
+    }
+    setLastUpdatedAt(new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }));
+    setProfileStatus("Farm profile updated and ready for downstream recommendations.");
+  }
 
   return (
-    <main className="fc-shell">
+    <main className={`fc-shell ${theme === "dark" ? "theme-dark" : "theme-light"}`}>
       <header className="fc-topbar">
         <div className="fc-brand">
           <p className="fc-version">FieldCommander v1</p>
@@ -124,6 +244,13 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
         <div className="fc-status">
           <span>California / Yuba-Sutter Pilot</span>
           <span className="live-dot">LIVE</span>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={() => setTheme((prev) => (prev === "light" ? "dark" : "light"))}
+          >
+            {theme === "light" ? "Dark" : "Light"}
+          </button>
         </div>
       </header>
 
@@ -141,30 +268,40 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
           <p className="side-collapsed-label">Operations</p>
           <div id="left-sidebar-content" className="side-content">
             <article className="fc-card">
-              <h2>Request Asset</h2>
-              <p>Route mitigation assets before smoke and embers hit orchard zones.</p>
-              <div className="asset-table">
-                {assetRows.map((row) => (
-                  <div key={row.id} className="asset-row">
-                    <div>
-                      <strong>{row.id}</strong>
-                      <span>{row.asset}</span>
+              <h2>Firewatch OSINT Feed</h2>
+              <p>Mock Twitter intelligence stream for rapid incident context.</p>
+              <div className="osint-feed">
+                {osintFeed.map((item) => (
+                  <article key={`${item.handle}-${item.time}`} className={`osint-post ${item.tone}`}>
+                    <div className="osint-head">
+                      <div className="osint-identity">
+                        <i className={`osint-avatar ${item.tone}`} aria-hidden="true">
+                          <Image
+                            src="/calfire-logo.png"
+                            alt="CAL FIRE logo"
+                            width={20}
+                            height={20}
+                          />
+                        </i>
+                        <div>
+                          <strong>{item.user}</strong>
+                          <span>{item.handle}</span>
+                        </div>
+                      </div>
+                      <b>{item.time}</b>
                     </div>
-                    <b>{row.status}</b>
-                  </div>
+                    <p className="osint-post-body">{item.post}</p>
+                    <div className="osint-meta">
+                      <span className="osint-confidence">Confidence {item.confidence}</span>
+                    </div>
+                    <div className="osint-tags">
+                      {item.tags.map((tag) => (
+                        <i key={`${item.handle}-${tag}`}>#{tag}</i>
+                      ))}
+                    </div>
+                  </article>
                 ))}
               </div>
-            </article>
-
-            <article className="fc-card">
-              <h2>Field Reporting</h2>
-              <p>Drop pins for embers, spot fires, wind shear, and smoke smell directly on the map.</p>
-              <ul className="chip-list">
-                <li>Embers</li>
-                <li>Spot Fire</li>
-                <li>Wind Shear</li>
-                <li>Smoke Smell</li>
-              </ul>
             </article>
 
             <article className="fc-card">
@@ -185,6 +322,10 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
                 <p>{signal.label}</p>
                 <h3>{signal.value}</h3>
                 <span>{signal.trend}</span>
+                <div className="metric-provenance">
+                  <small>Derived: FIRMS + Open-Meteo + Field Reports</small>
+                  <small>Confidence: {signal.tone === "alert" ? "0.86" : signal.tone === "warn" ? "0.79" : "0.74"}</small>
+                </div>
               </article>
             ))}
           </div>
@@ -207,6 +348,29 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
                   <p>Three.js Model</p>
                   <h2>Almond Ember Ignition Simulation</h2>
                 </div>
+              </div>
+              <div className="sim-control-grid">
+                <label>
+                  Ember rate / min
+                  <input type="range" min="20" max="220" value={emberRatePerMinute} readOnly />
+                  <span>{emberRatePerMinute}</span>
+                </label>
+                <label>
+                  Ignition nodes
+                  <input type="range" min="1" max="8" value={ignitionNodes} readOnly />
+                  <span>{ignitionNodes}</span>
+                </label>
+                <label>
+                  Rinse window (min)
+                  <input
+                    type="range"
+                    min="10"
+                    max="240"
+                    value={Math.max(15, data.summary.mitigationWindowMinutes)}
+                    readOnly
+                  />
+                  <span>{Math.max(15, data.summary.mitigationWindowMinutes)}</span>
+                </label>
               </div>
               <CropResilienceScene
                 emberRatePerMinute={emberRatePerMinute}
@@ -244,21 +408,67 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
           <p className="side-collapsed-label">Intel</p>
           <div id="right-sidebar-content" className="side-content">
             <article className="fc-card">
-              <h2>Persona Intelligence</h2>
-              <div className="persona-list">
-                {PERSONAS.map((persona) => (
-                  <section key={persona.name} className="persona-card">
-                    <h3>{persona.name}</h3>
-                    <p>
-                      <strong>Concern:</strong> {persona.concern}
-                    </p>
-                    <p>
-                      <strong>Guidance:</strong> {persona.guidance}
-                    </p>
-                  </section>
-                ))}
+              <h2>Farm Profile Resolver</h2>
+              <p>Input your location to parse a mock farm profile, then update fields before planning actions.</p>
+              <div className="farm-resolver-input">
+                <input
+                  type="text"
+                  value={locationQuery}
+                  onChange={(event) => setLocationQuery(event.target.value)}
+                  placeholder="Enter county, city, or ZIP"
+                />
+                <button type="button" onClick={parseLocationToMockFarm}>
+                  Parse Farm Data
+                </button>
               </div>
+              {profileStatus ? <p className="farm-resolver-status">{profileStatus}</p> : null}
+              {farmDraft ? (
+                <div className="farm-profile-form">
+                  <label>
+                    Farm Name
+                    <input value={farmDraft.farmName} onChange={(event) => updateDraftField("farmName", event.target.value)} />
+                  </label>
+                  <label>
+                    Location
+                    <input value={farmDraft.locationLabel} onChange={(event) => updateDraftField("locationLabel", event.target.value)} />
+                  </label>
+                  <div className="farm-profile-grid">
+                    <label>
+                      Crop
+                      <input value={farmDraft.crop} onChange={(event) => updateDraftField("crop", event.target.value)} />
+                    </label>
+                    <label>
+                      Acres
+                      <input value={farmDraft.acres} onChange={(event) => updateDraftField("acres", event.target.value)} />
+                    </label>
+                    <label>
+                      Risk Exposure
+                      <input value={farmDraft.riskExposure} onChange={(event) => updateDraftField("riskExposure", event.target.value)} />
+                    </label>
+                  </div>
+                  <label>
+                    Irrigation System
+                    <input value={farmDraft.irrigation} onChange={(event) => updateDraftField("irrigation", event.target.value)} />
+                  </label>
+                  <label>
+                    Primary Threat Vector (1 per line)
+                    <textarea value={farmDraft.primaryThreats} onChange={(event) => updateDraftField("primaryThreats", event.target.value)} />
+                  </label>
+                  <label>
+                    Recommended Action (1 per line)
+                    <textarea value={farmDraft.recommendedActions} onChange={(event) => updateDraftField("recommendedActions", event.target.value)} />
+                  </label>
+                  <div className="farm-profile-actions">
+                    <button type="button" onClick={saveFarmProfile}>
+                      Save Updates
+                    </button>
+                    {lastUpdatedAt ? <span>Updated {lastUpdatedAt}</span> : null}
+                  </div>
+                </div>
+              ) : null}
             </article>
+
+            <AiGeoMitigationAdvisor />
 
             <article className="fc-card">
               <h2>Data Fusion Stack</h2>
