@@ -6,6 +6,7 @@ import path from "node:path";
 import type {
   DashboardRiskSignal,
   DashboardSummary,
+  FarmBoundaryCollection,
   ReadyToPlotBundle,
   ReadyToPlotChartRow,
   ReadyToPlotFarmStatus,
@@ -18,6 +19,7 @@ type Manifest = {
 };
 
 const READY_TO_PLOT_DIR = path.join(process.cwd(), "etl-pipeline", "ready_to_plot");
+const BOUNDARY_FILES = ["map_farm_boundaries.geojson", "farm_boundaries.geojson"];
 
 const DEFAULT_SIGNALS: DashboardRiskSignal[] = [
   { label: "Smoke Taint Index", value: "0 / 100", trend: "No chart data loaded", tone: "warn" },
@@ -33,6 +35,54 @@ async function readJson(pathname: string): Promise<unknown> {
   } catch {
     return null;
   }
+}
+
+function isFarmBoundaryCollection(value: unknown): value is FarmBoundaryCollection {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const maybe = value as { features?: unknown; type?: unknown };
+  return maybe.type === "FeatureCollection" && Array.isArray(maybe.features);
+}
+
+function isAgriculturalClassCode(code: number | null): boolean {
+  if (code === null) {
+    return false;
+  }
+
+  // USDA CDL crop classes live primarily in the 1-80 range.
+  return code >= 1 && code <= 80;
+}
+
+function filterAgriculturalRows(
+  farmStatus: ReadyToPlotFarmStatus[],
+  chartRows: ReadyToPlotChartRow[]
+): {
+  chartRows: ReadyToPlotChartRow[];
+  farmStatus: ReadyToPlotFarmStatus[];
+} {
+  const filteredFarmStatus = farmStatus.filter((row) =>
+    isAgriculturalClassCode(row.cdl_class_code)
+  );
+  const farmIds = new Set(filteredFarmStatus.map((row) => row.farm_id));
+  const filteredChartRows = chartRows.filter((row) => farmIds.has(row.farm_id));
+
+  return {
+    chartRows: filteredChartRows,
+    farmStatus: filteredFarmStatus
+  };
+}
+
+async function loadFarmBoundaries(): Promise<FarmBoundaryCollection | null> {
+  for (const filename of BOUNDARY_FILES) {
+    const candidate = await readJson(path.join(READY_TO_PLOT_DIR, filename));
+    if (isFarmBoundaryCollection(candidate)) {
+      return candidate;
+    }
+  }
+
+  return null;
 }
 
 async function readJsonl<T>(pathname: string): Promise<T[]> {
@@ -178,12 +228,14 @@ export async function loadReadyToPlotBundle(): Promise<ReadyToPlotBundle> {
   const firePoints = await readJsonl<ReadyToPlotFirePoint>(
     path.join(READY_TO_PLOT_DIR, "map_fire_points.jsonl")
   );
-  const farmStatus = await readJsonl<ReadyToPlotFarmStatus>(
+  const rawFarmStatus = await readJsonl<ReadyToPlotFarmStatus>(
     path.join(READY_TO_PLOT_DIR, "map_farm_status.jsonl")
   );
-  const chartRows = await readJsonl<ReadyToPlotChartRow>(
+  const rawChartRows = await readJsonl<ReadyToPlotChartRow>(
     path.join(READY_TO_PLOT_DIR, "chart_farm_timeseries.jsonl")
   );
+  const { farmStatus, chartRows } = filterAgriculturalRows(rawFarmStatus, rawChartRows);
+  const farmBoundaries = await loadFarmBoundaries();
   const manifestRaw = await readJson(path.join(READY_TO_PLOT_DIR, "manifest.json"));
   const manifest = (manifestRaw as Manifest | null) ?? null;
   const builtAtUtc = manifest?.built_at_utc ?? null;
@@ -206,6 +258,7 @@ export async function loadReadyToPlotBundle(): Promise<ReadyToPlotBundle> {
 
     return {
       chartRowCount: 0,
+      farmBoundaries,
       farmStatus,
       firePoints,
       riskSignals: DEFAULT_SIGNALS,
@@ -218,6 +271,7 @@ export async function loadReadyToPlotBundle(): Promise<ReadyToPlotBundle> {
 
   return {
     chartRowCount: chartRows.length,
+    farmBoundaries,
     farmStatus,
     firePoints,
     riskSignals,

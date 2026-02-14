@@ -338,7 +338,11 @@ export default function FieldCommanderDashboard({ data }: FieldCommanderDashboar
               </div>
               <span className="ghost-tag">Click map to add field report pins</span>
             </div>
-            <OperationsMap firePoints={data.firePoints} farmStatus={data.farmStatus} />
+            <OperationsMap
+              firePoints={data.firePoints}
+              farmBoundaries={data.farmBoundaries}
+              farmStatus={data.farmStatus}
+            />
           </article>
 
           <div className="fc-main-bottom">

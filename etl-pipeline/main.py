@@ -227,11 +227,24 @@ def _run_plot_dataset(args: argparse.Namespace) -> dict[str, Any]:
 
     summary: dict[str, Any] = {"tables": {}, "built_at_utc": datetime.now(timezone.utc).isoformat()}
     for table_name, records in tables.items():
-        output_path = output_dir / f"{table_name}.jsonl"
-        write_jsonl(records, output_path)
+        is_geojson = (
+            isinstance(records, dict)
+            and records.get("type") == "FeatureCollection"
+            and isinstance(records.get("features"), list)
+        )
+
+        if is_geojson:
+            output_path = output_dir / f"{table_name}.geojson"
+            write_json(records, output_path)
+            record_count = len(records.get("features", []))
+        else:
+            output_path = output_dir / f"{table_name}.jsonl"
+            write_jsonl(records, output_path)
+            record_count = len(records)
+
         summary["tables"][table_name] = {
             "path": str(output_path),
-            "record_count": len(records),
+            "record_count": record_count,
         }
 
     write_json(summary, output_dir / "manifest.json")

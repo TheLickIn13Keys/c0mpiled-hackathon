@@ -11,6 +11,10 @@
     "chart_farm_timeseries": {
       "path": "data/processed/plot/sdf_area/chart_farm_timeseries.jsonl",
       "record_count": 38880
+    },
+    "map_farm_boundaries": {
+      "path": "data/processed/plot/sdf_area/map_farm_boundaries.geojson",
+      "record_count": 180
     }
   },
   "built_at_utc": "2026-02-14T03:28:17.596560+00:00"

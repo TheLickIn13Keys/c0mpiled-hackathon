@@ -1,3 +1,5 @@
+import type { FeatureCollection, MultiPolygon, Polygon } from "geojson";
+
 export type RiskLevel = "low" | "medium" | "high";
 
 export type ReadyToPlotFirePoint = {
@@ -69,8 +71,20 @@ export type DashboardSummary = {
   topFarm: ReadyToPlotFarmStatus | null;
 };
 
+export type FarmBoundaryProps = {
+  crop_type?: string;
+  farm_id?: string;
+  farm_name?: string;
+};
+
+export type FarmBoundaryCollection = FeatureCollection<
+  Polygon | MultiPolygon,
+  FarmBoundaryProps
+>;
+
 export type ReadyToPlotBundle = {
   chartRowCount: number;
+  farmBoundaries: FarmBoundaryCollection | null;
   farmStatus: ReadyToPlotFarmStatus[];
   firePoints: ReadyToPlotFirePoint[];
   riskSignals: DashboardRiskSignal[];

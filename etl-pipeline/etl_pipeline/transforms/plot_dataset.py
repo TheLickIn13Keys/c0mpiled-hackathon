@@ -16,6 +16,7 @@ class FarmAsset:
     latitude: float
     longitude: float
     crop_type: str
+    boundary_geometry: dict[str, Any] | None = None
 
 
 def build_plot_tables(
@@ -25,9 +26,10 @@ def build_plot_tables(
     cdl_jsonl_path: str | None = None,
     fire_radius_km: float = 50.0,
     fire_window_hours: int = 24,
-) -> dict[str, list[dict[str, Any]]]:
+) -> dict[str, Any]:
     now_utc = datetime.now(timezone.utc)
     farms = _load_farms(farms_csv_path)
+    farms_by_id = {farm.farm_id: farm for farm in farms}
     firms_rows = _load_jsonl(firms_jsonl_path)
     weather_rows = _load_jsonl(open_meteo_jsonl_path)
     cdl_rows = _load_jsonl(cdl_jsonl_path) if cdl_jsonl_path else []
@@ -80,11 +82,13 @@ def build_plot_tables(
 
     status_source = latest_observed_by_farm if latest_observed_by_farm else latest_by_farm
     map_farm_status = [_to_farm_status(row) for row in status_source.values()]
+    map_farm_boundaries = _build_map_farm_boundaries_geojson(map_farm_status, farms_by_id)
     map_farm_status.sort(key=lambda row: row["risk_score"], reverse=True)
     chart_rows.sort(key=lambda row: (row["farm_id"], row["hour_utc"]))
     return {
         "map_fire_points": map_fire_points,
         "map_farm_status": map_farm_status,
+        "map_farm_boundaries": map_farm_boundaries,
         "chart_farm_timeseries": chart_rows,
     }
 
@@ -94,6 +98,7 @@ def _load_farms(path: str) -> list[FarmAsset]:
     with open(path, "r", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         for row in reader:
+            boundary_geometry = _extract_boundary_geometry(row)
             farms.append(
                 FarmAsset(
                     farm_id=row["farm_id"],
@@ -101,9 +106,37 @@ def _load_farms(path: str) -> list[FarmAsset]:
                     latitude=float(row["latitude"]),
                     longitude=float(row["longitude"]),
                     crop_type=row.get("crop_type", "other"),
+                    boundary_geometry=boundary_geometry,
                 )
             )
     return farms
+
+
+def _extract_boundary_geometry(row: dict[str, str]) -> dict[str, Any] | None:
+    candidate_keys = (
+        "boundary_geojson",
+        "boundary_geometry",
+        "geometry_geojson",
+        "polygon_geojson",
+        "geojson",
+        "geometry",
+    )
+    for key in candidate_keys:
+        raw = row.get(key)
+        if raw is None:
+            continue
+        raw = raw.strip()
+        if not raw:
+            continue
+        if not raw.startswith("{"):
+            continue
+        try:
+            value = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        if _is_polygon_geometry(value):
+            return value
+    return None
 
 
 def _load_jsonl(path: str | None) -> list[dict[str, Any]]:
@@ -274,6 +307,88 @@ def _build_map_fire_points(firms_rows: list[dict[str, Any]]) -> list[dict[str, A
             }
         )
     return out
+
+
+def _build_map_farm_boundaries_geojson(
+    map_farm_status: list[dict[str, Any]],
+    farms_by_id: dict[str, FarmAsset],
+) -> dict[str, Any]:
+    lat_step = _infer_grid_step([row["lat"] for row in map_farm_status if _to_float(row.get("lat")) is not None])
+    lon_step = _infer_grid_step([row["lon"] for row in map_farm_status if _to_float(row.get("lon")) is not None])
+    half_lat = lat_step * 0.42
+    half_lon = lon_step * 0.42
+
+    features: list[dict[str, Any]] = []
+    for row in map_farm_status:
+        farm_id = str(row.get("farm_id", ""))
+        farm_asset = farms_by_id.get(farm_id)
+        geometry = farm_asset.boundary_geometry if farm_asset else None
+        boundary_source = "farm_csv_geojson"
+        if not _is_polygon_geometry(geometry):
+            boundary_source = "inferred_grid_cell"
+            lon = _to_float(row.get("lon"))
+            lat = _to_float(row.get("lat"))
+            if lat is None or lon is None:
+                continue
+            geometry = _grid_cell_polygon(lat=lat, lon=lon, half_lat=half_lat, half_lon=half_lon)
+
+        feature = {
+            "type": "Feature",
+            "properties": {
+                "farm_id": row.get("farm_id"),
+                "farm_name": row.get("farm_name"),
+                "crop_type": row.get("crop_type"),
+                "risk_score": row.get("risk_score"),
+                "risk_level": row.get("risk_level"),
+                "top_driver": row.get("top_driver"),
+                "hour_utc": row.get("hour_utc"),
+                "cdl_class_code": row.get("cdl_class_code"),
+                "boundary_source": boundary_source,
+            },
+            "geometry": geometry,
+        }
+        features.append(feature)
+
+    return {
+        "type": "FeatureCollection",
+        "features": features,
+    }
+
+
+def _is_polygon_geometry(value: Any) -> bool:
+    if not isinstance(value, dict):
+        return False
+    geometry_type = value.get("type")
+    coordinates = value.get("coordinates")
+    if geometry_type not in {"Polygon", "MultiPolygon"}:
+        return False
+    return isinstance(coordinates, list) and len(coordinates) > 0
+
+
+def _infer_grid_step(values: list[float]) -> float:
+    unique = sorted({round(value, 6) for value in values})
+    if len(unique) < 2:
+        return 0.05
+    diffs = [unique[index] - unique[index - 1] for index in range(1, len(unique))]
+    positive_diffs = [diff for diff in diffs if diff > 0]
+    if not positive_diffs:
+        return 0.05
+    return max(0.01, min(0.1, min(positive_diffs)))
+
+
+def _grid_cell_polygon(lat: float, lon: float, half_lat: float, half_lon: float) -> dict[str, Any]:
+    return {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [lon - half_lon, lat - half_lat],
+                [lon + half_lon, lat - half_lat],
+                [lon + half_lon, lat + half_lat],
+                [lon - half_lon, lat + half_lat],
+                [lon - half_lon, lat - half_lat],
+            ]
+        ],
+    }
 
 
 def _risk_hint(frp: float, confidence: float) -> str:

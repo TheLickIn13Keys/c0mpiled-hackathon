@@ -2,8 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import type { Feature, FeatureCollection, LineString, Point, Polygon } from "geojson";
 import type {
+  Feature,
+  FeatureCollection,
+  LineString,
+  MultiPolygon,
+  Point,
+  Polygon
+} from "geojson";
+import type {
+  FarmBoundaryCollection,
   ReadyToPlotFarmStatus,
   ReadyToPlotFirePoint
 } from "@/lib/ready-to-plot-types";
@@ -46,6 +54,7 @@ type LayerVisibility = {
 };
 
 type OperationsMapProps = {
+  farmBoundaries: FarmBoundaryCollection | null;
   farmStatus: ReadyToPlotFarmStatus[];
   firePoints: ReadyToPlotFirePoint[];
 };
@@ -63,7 +72,7 @@ const REPORT_TYPES: Array<{
 ];
 
 const LAYER_IDS: Array<{ ids: string[]; key: keyof LayerVisibility }> = [
-  { key: "farms", ids: ["farm-points"] },
+  { key: "farms", ids: ["farm-fill", "farm-line"] },
   { key: "fires", ids: ["hotspot-points"] },
   { key: "prediction", ids: ["fire-path-fill", "fire-path-line"] },
   { key: "vectors", ids: ["smoke-vectors"] },
@@ -220,31 +229,6 @@ function buildPredictionArea(
   return polygon;
 }
 
-function buildFarmPoints(
-  farmStatus: ReadyToPlotFarmStatus[]
-): FeatureCollection<Point, FarmProps> {
-  return {
-    type: "FeatureCollection",
-    features: farmStatus.map((farm) => ({
-      type: "Feature",
-      properties: {
-        cdl_class_code: farm.cdl_class_code,
-        crop_type: farm.crop_type,
-        farm_id: farm.farm_id,
-        farm_name: farm.farm_name,
-        hour_utc: farm.hour_utc,
-        risk_level: farm.risk_level,
-        risk_score: farm.risk_score,
-        top_driver: farm.top_driver
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [farm.lon, farm.lat]
-      }
-    }))
-  };
-}
-
 function buildFirePoints(
   firePoints: ReadyToPlotFirePoint[]
 ): FeatureCollection<Point, FireProps> {
@@ -267,7 +251,142 @@ function buildFirePoints(
   };
 }
 
-export default function OperationsMap({ firePoints, farmStatus }: OperationsMapProps) {
+function inferStep(values: number[]): number {
+  const sorted = [...new Set(values)].sort((a, b) => a - b);
+  if (sorted.length < 2) {
+    return 0.05;
+  }
+
+  let minDiff = Number.POSITIVE_INFINITY;
+  for (let index = 1; index < sorted.length; index += 1) {
+    const diff = sorted[index] - sorted[index - 1];
+    if (diff > 0 && diff < minDiff) {
+      minDiff = diff;
+    }
+  }
+
+  if (!Number.isFinite(minDiff)) {
+    return 0.05;
+  }
+
+  return Math.max(0.01, Math.min(0.1, minDiff));
+}
+
+function buildFallbackFarmCells(
+  farmStatus: ReadyToPlotFarmStatus[]
+): FeatureCollection<Polygon, FarmProps> {
+  const latStep = inferStep(farmStatus.map((row) => row.lat));
+  const lonStep = inferStep(farmStatus.map((row) => row.lon));
+  const halfLat = latStep * 0.42;
+  const halfLon = lonStep * 0.42;
+
+  return {
+    type: "FeatureCollection",
+    features: farmStatus.map((farm) => ({
+      type: "Feature",
+      properties: {
+        cdl_class_code: farm.cdl_class_code,
+        crop_type: farm.crop_type,
+        farm_id: farm.farm_id,
+        farm_name: farm.farm_name,
+        hour_utc: farm.hour_utc,
+        risk_level: farm.risk_level,
+        risk_score: farm.risk_score,
+        top_driver: farm.top_driver
+      },
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [farm.lon - halfLon, farm.lat - halfLat],
+            [farm.lon + halfLon, farm.lat - halfLat],
+            [farm.lon + halfLon, farm.lat + halfLat],
+            [farm.lon - halfLon, farm.lat + halfLat],
+            [farm.lon - halfLon, farm.lat - halfLat]
+          ]
+        ]
+      }
+    }))
+  };
+}
+
+function findBoundaryFarmId(props: Record<string, unknown> | null): string | null {
+  if (!props) {
+    return null;
+  }
+
+  const rawId = props.farm_id ?? props.farmId ?? props.id;
+  if (typeof rawId !== "string" || rawId.length === 0) {
+    return null;
+  }
+
+  return rawId;
+}
+
+function buildFarmPolygons(
+  farmStatus: ReadyToPlotFarmStatus[],
+  farmBoundaries: FarmBoundaryCollection | null
+): FeatureCollection<Polygon | MultiPolygon, FarmProps> {
+  if (!farmBoundaries || farmBoundaries.features.length === 0) {
+    return buildFallbackFarmCells(farmStatus);
+  }
+
+  const statusById = new Map(farmStatus.map((row) => [row.farm_id, row]));
+  const mergedFeatures: Array<Feature<Polygon | MultiPolygon, FarmProps>> = [];
+  const matchedFarmIds = new Set<string>();
+
+  for (const boundary of farmBoundaries.features) {
+    const geometry = boundary.geometry;
+    if (!geometry || (geometry.type !== "Polygon" && geometry.type !== "MultiPolygon")) {
+      continue;
+    }
+
+    const boundaryProps = (boundary.properties ?? null) as Record<string, unknown> | null;
+    const farmId = findBoundaryFarmId(boundaryProps);
+    if (!farmId) {
+      continue;
+    }
+
+    const farm = statusById.get(farmId);
+    if (!farm) {
+      continue;
+    }
+
+    matchedFarmIds.add(farmId);
+    mergedFeatures.push({
+      type: "Feature",
+      properties: {
+        cdl_class_code: farm.cdl_class_code,
+        crop_type: farm.crop_type,
+        farm_id: farm.farm_id,
+        farm_name: farm.farm_name,
+        hour_utc: farm.hour_utc,
+        risk_level: farm.risk_level,
+        risk_score: farm.risk_score,
+        top_driver: farm.top_driver
+      },
+      geometry
+    });
+  }
+
+  if (mergedFeatures.length === 0) {
+    return buildFallbackFarmCells(farmStatus);
+  }
+
+  const missingFarms = farmStatus.filter((row) => !matchedFarmIds.has(row.farm_id));
+  const missingFarmCells = buildFallbackFarmCells(missingFarms).features;
+
+  return {
+    type: "FeatureCollection",
+    features: [...mergedFeatures, ...missingFarmCells]
+  };
+}
+
+export default function OperationsMap({
+  firePoints,
+  farmBoundaries,
+  farmStatus
+}: OperationsMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const mapLoadedRef = useRef(false);
@@ -288,7 +407,10 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
   });
 
   const view = useMemo(() => getMapView(farmStatus, firePoints), [farmStatus, firePoints]);
-  const farmPointsGeo = useMemo(() => buildFarmPoints(farmStatus), [farmStatus]);
+  const farmPolygonsGeo = useMemo(
+    () => buildFarmPolygons(farmStatus, farmBoundaries),
+    [farmBoundaries, farmStatus]
+  );
   const firePointsGeo = useMemo(() => buildFirePoints(firePoints), [firePoints]);
   const smokeVectorsGeo = useMemo(
     () => buildSmokeVectors(farmStatus, firePoints),
@@ -391,7 +513,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
       setMapError(null);
       resizeMap();
 
-      map.addSource("farms", { type: "geojson", data: farmPointsGeo });
+      map.addSource("farms", { type: "geojson", data: farmPolygonsGeo });
       map.addSource("hotspots", { type: "geojson", data: firePointsGeo });
       map.addSource("smoke-vectors-source", { type: "geojson", data: smokeVectorsGeo });
       map.addSource("fire-path", { type: "geojson", data: predictionGeo });
@@ -431,20 +553,11 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
       });
 
       map.addLayer({
-        id: "farm-points",
-        type: "circle",
+        id: "farm-fill",
+        type: "fill",
         source: "farms",
         paint: {
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["get", "risk_score"],
-            0,
-            5,
-            1,
-            10
-          ],
-          "circle-color": [
+          "fill-color": [
             "match",
             ["get", "crop_type"],
             "almond",
@@ -455,12 +568,34 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
             "#efd768",
             "grapes",
             "#efd768",
-            "mixed_ag",
+            "field_crop",
             "#8fd4a6",
-            "#97c4aa"
+            "orchard",
+            "#9df0a4",
+            "mixed_ag",
+            "#87bea3",
+            "#8bbfa6"
           ],
-          "circle-opacity": 0.88,
-          "circle-stroke-color": [
+          "fill-opacity": [
+            "interpolate",
+            ["linear"],
+            ["get", "risk_score"],
+            0,
+            0.2,
+            0.6,
+            0.58,
+            1,
+            0.78
+          ]
+        }
+      });
+
+      map.addLayer({
+        id: "farm-line",
+        type: "line",
+        source: "farms",
+        paint: {
+          "line-color": [
             "match",
             ["get", "risk_level"],
             "high",
@@ -469,7 +604,16 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
             "#ffc46b",
             "#c6ffd8"
           ],
-          "circle-stroke-width": 1.4
+          "line-width": [
+            "interpolate",
+            ["linear"],
+            ["get", "risk_score"],
+            0,
+            0.8,
+            1,
+            2
+          ],
+          "line-opacity": 0.95
         }
       });
 
@@ -549,20 +693,19 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
       map.on("mouseleave", "report-points", () => {
         map.getCanvas().style.cursor = "";
       });
-      map.on("mouseenter", "farm-points", () => {
+      map.on("mouseenter", "farm-fill", () => {
         map.getCanvas().style.cursor = "pointer";
       });
-      map.on("mouseleave", "farm-points", () => {
+      map.on("mouseleave", "farm-fill", () => {
         map.getCanvas().style.cursor = "";
       });
 
-      map.on("click", "farm-points", (event) => {
+      map.on("click", "farm-fill", (event) => {
         const feature = event.features?.[0];
-        if (!feature || feature.geometry.type !== "Point") {
+        if (!feature) {
           return;
         }
 
-        const coordinates = [...feature.geometry.coordinates] as [number, number];
         const farmName = String(feature.properties?.farm_name ?? "Farm");
         const crop = String(feature.properties?.crop_type ?? "Unknown");
         const riskScore = Number(feature.properties?.risk_score ?? 0);
@@ -570,7 +713,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
         const driver = String(feature.properties?.top_driver ?? "unknown");
 
         new mapboxgl.Popup({ offset: 14 })
-          .setLngLat(coordinates)
+          .setLngLat([event.lngLat.lng, event.lngLat.lat])
           .setHTML(
             `<strong>${farmName}</strong><p>Crop: ${crop}<br/>Risk: ${Math.round(
               riskScore * 100
@@ -620,7 +763,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
 
       map.on("click", (event) => {
         const hit = map.queryRenderedFeatures(event.point, {
-          layers: ["farm-points", "hotspot-points", "report-points"]
+          layers: ["farm-fill", "hotspot-points", "report-points"]
         });
         if (hit.length > 0) {
           return;
@@ -662,7 +805,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
       map.remove();
       mapRef.current = null;
     };
-  }, [firePointsGeo, farmPointsGeo, missingToken, predictionGeo, smokeVectorsGeo, token, view]);
+  }, [firePointsGeo, farmPolygonsGeo, missingToken, predictionGeo, smokeVectorsGeo, token, view]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -672,7 +815,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
 
     const farmsSource = map.getSource("farms");
     if (farmsSource) {
-      (farmsSource as mapboxgl.GeoJSONSource).setData(farmPointsGeo);
+      (farmsSource as mapboxgl.GeoJSONSource).setData(farmPolygonsGeo);
     }
 
     const firesSource = map.getSource("hotspots");
@@ -689,7 +832,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
     if (predictionSource) {
       (predictionSource as mapboxgl.GeoJSONSource).setData(predictionGeo);
     }
-  }, [farmPointsGeo, firePointsGeo, predictionGeo, smokeVectorsGeo]);
+  }, [farmPolygonsGeo, firePointsGeo, predictionGeo, smokeVectorsGeo]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -775,7 +918,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
                   setVisibility((prev) => ({ ...prev, farms: !prev.farms }))
                 }
               />
-              Farm Risk Points
+              Farm Boundaries
             </label>
             <label>
               <input
@@ -828,7 +971,7 @@ export default function OperationsMap({ firePoints, farmStatus }: OperationsMapP
         <h4>Legend</h4>
         <p>
           <span className="legend-swatch crop" />
-          Farm risk marker by crop type
+          Farm boundaries (ag CDL-clipped)
         </p>
         <p>
           <span className="legend-swatch fire" />
