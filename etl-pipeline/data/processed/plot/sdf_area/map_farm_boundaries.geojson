@@ -1,0 +1,7385 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0026",
+        "farm_name": "SDF Farm 0026",
+        "crop_type": "field_crop",
+        "risk_score": 0.0072,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              37.979
+            ],
+            [
+              -121.529,
+              37.979
+            ],
+            [
+              -121.529,
+              38.021
+            ],
+            [
+              -121.571,
+              38.021
+            ],
+            [
+              -121.571,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0027",
+        "farm_name": "SDF Farm 0027",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              37.979
+            ],
+            [
+              -121.479,
+              37.979
+            ],
+            [
+              -121.479,
+              38.021
+            ],
+            [
+              -121.521,
+              38.021
+            ],
+            [
+              -121.521,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0029",
+        "farm_name": "SDF Farm 0029",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.421,
+              37.979
+            ],
+            [
+              -121.379,
+              37.979
+            ],
+            [
+              -121.379,
+              38.021
+            ],
+            [
+              -121.421,
+              38.021
+            ],
+            [
+              -121.421,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0059",
+        "farm_name": "SDF Farm 0059",
+        "crop_type": "field_crop",
+        "risk_score": 0.006,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.028999999999996
+            ],
+            [
+              -121.529,
+              38.028999999999996
+            ],
+            [
+              -121.529,
+              38.071
+            ],
+            [
+              -121.571,
+              38.071
+            ],
+            [
+              -121.571,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0066",
+        "farm_name": "SDF Farm 0066",
+        "crop_type": "walnut",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.221,
+              38.028999999999996
+            ],
+            [
+              -121.179,
+              38.028999999999996
+            ],
+            [
+              -121.179,
+              38.071
+            ],
+            [
+              -121.221,
+              38.071
+            ],
+            [
+              -121.221,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0092",
+        "farm_name": "SDF Farm 0092",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.079
+            ],
+            [
+              -121.529,
+              38.079
+            ],
+            [
+              -121.529,
+              38.121
+            ],
+            [
+              -121.571,
+              38.121
+            ],
+            [
+              -121.571,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0093",
+        "farm_name": "SDF Farm 0093",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.079
+            ],
+            [
+              -121.479,
+              38.079
+            ],
+            [
+              -121.479,
+              38.121
+            ],
+            [
+              -121.521,
+              38.121
+            ],
+            [
+              -121.521,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0094",
+        "farm_name": "SDF Farm 0094",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.079
+            ],
+            [
+              -121.429,
+              38.079
+            ],
+            [
+              -121.429,
+              38.121
+            ],
+            [
+              -121.471,
+              38.121
+            ],
+            [
+              -121.471,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0096",
+        "farm_name": "SDF Farm 0096",
+        "crop_type": "orchard",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.079
+            ],
+            [
+              -121.329,
+              38.079
+            ],
+            [
+              -121.329,
+              38.121
+            ],
+            [
+              -121.371,
+              38.121
+            ],
+            [
+              -121.371,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0097",
+        "farm_name": "SDF Farm 0097",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.321,
+              38.079
+            ],
+            [
+              -121.279,
+              38.079
+            ],
+            [
+              -121.279,
+              38.121
+            ],
+            [
+              -121.321,
+              38.121
+            ],
+            [
+              -121.321,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0099",
+        "farm_name": "SDF Farm 0099",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.221,
+              38.079
+            ],
+            [
+              -121.179,
+              38.079
+            ],
+            [
+              -121.179,
+              38.121
+            ],
+            [
+              -121.221,
+              38.121
+            ],
+            [
+              -121.221,
+              38.079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0123",
+        "farm_name": "SDF Farm 0123",
+        "crop_type": "field_crop",
+        "risk_score": 0.089,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.129
+            ],
+            [
+              -121.629,
+              38.129
+            ],
+            [
+              -121.629,
+              38.171
+            ],
+            [
+              -121.671,
+              38.171
+            ],
+            [
+              -121.671,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0124",
+        "farm_name": "SDF Farm 0124",
+        "crop_type": "field_crop",
+        "risk_score": 0.0488,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.129
+            ],
+            [
+              -121.579,
+              38.129
+            ],
+            [
+              -121.579,
+              38.171
+            ],
+            [
+              -121.621,
+              38.171
+            ],
+            [
+              -121.621,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0125",
+        "farm_name": "SDF Farm 0125",
+        "crop_type": "field_crop",
+        "risk_score": 0.0234,
+        "risk_level": "low",
+        "top_driver": "fire_intensity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.129
+            ],
+            [
+              -121.529,
+              38.129
+            ],
+            [
+              -121.529,
+              38.171
+            ],
+            [
+              -121.571,
+              38.171
+            ],
+            [
+              -121.571,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0126",
+        "farm_name": "SDF Farm 0126",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.129
+            ],
+            [
+              -121.479,
+              38.129
+            ],
+            [
+              -121.479,
+              38.171
+            ],
+            [
+              -121.521,
+              38.171
+            ],
+            [
+              -121.521,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0127",
+        "farm_name": "SDF Farm 0127",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.129
+            ],
+            [
+              -121.429,
+              38.129
+            ],
+            [
+              -121.429,
+              38.171
+            ],
+            [
+              -121.471,
+              38.171
+            ],
+            [
+              -121.471,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0129",
+        "farm_name": "SDF Farm 0129",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.129
+            ],
+            [
+              -121.329,
+              38.129
+            ],
+            [
+              -121.329,
+              38.171
+            ],
+            [
+              -121.371,
+              38.171
+            ],
+            [
+              -121.371,
+              38.129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0140",
+        "farm_name": "SDF Farm 0140",
+        "crop_type": "grapes",
+        "risk_score": 0.1804,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.471,
+              38.179
+            ],
+            [
+              -122.429,
+              38.179
+            ],
+            [
+              -122.429,
+              38.221000000000004
+            ],
+            [
+              -122.471,
+              38.221000000000004
+            ],
+            [
+              -122.471,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0157",
+        "farm_name": "SDF Farm 0157",
+        "crop_type": "field_crop",
+        "risk_score": 0.102,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.179
+            ],
+            [
+              -121.579,
+              38.179
+            ],
+            [
+              -121.579,
+              38.221000000000004
+            ],
+            [
+              -121.621,
+              38.221000000000004
+            ],
+            [
+              -121.621,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0159",
+        "farm_name": "SDF Farm 0159",
+        "crop_type": "field_crop",
+        "risk_score": 0.041,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.179
+            ],
+            [
+              -121.479,
+              38.179
+            ],
+            [
+              -121.479,
+              38.221000000000004
+            ],
+            [
+              -121.521,
+              38.221000000000004
+            ],
+            [
+              -121.521,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0161",
+        "farm_name": "SDF Farm 0161",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.421,
+              38.179
+            ],
+            [
+              -121.379,
+              38.179
+            ],
+            [
+              -121.379,
+              38.221000000000004
+            ],
+            [
+              -121.421,
+              38.221000000000004
+            ],
+            [
+              -121.421,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0162",
+        "farm_name": "SDF Farm 0162",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.179
+            ],
+            [
+              -121.329,
+              38.179
+            ],
+            [
+              -121.329,
+              38.221000000000004
+            ],
+            [
+              -121.371,
+              38.221000000000004
+            ],
+            [
+              -121.371,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0163",
+        "farm_name": "SDF Farm 0163",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.321,
+              38.179
+            ],
+            [
+              -121.279,
+              38.179
+            ],
+            [
+              -121.279,
+              38.221000000000004
+            ],
+            [
+              -121.321,
+              38.221000000000004
+            ],
+            [
+              -121.321,
+              38.179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0174",
+        "farm_name": "SDF Farm 0174",
+        "crop_type": "grapes",
+        "risk_score": 0.1766,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.421,
+              38.229
+            ],
+            [
+              -122.379,
+              38.229
+            ],
+            [
+              -122.379,
+              38.271
+            ],
+            [
+              -122.421,
+              38.271
+            ],
+            [
+              -122.421,
+              38.229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0189",
+        "farm_name": "SDF Farm 0189",
+        "crop_type": "field_crop",
+        "risk_score": 0.1704,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.229
+            ],
+            [
+              -121.629,
+              38.229
+            ],
+            [
+              -121.629,
+              38.271
+            ],
+            [
+              -121.671,
+              38.271
+            ],
+            [
+              -121.671,
+              38.229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0190",
+        "farm_name": "SDF Farm 0190",
+        "crop_type": "field_crop",
+        "risk_score": 0.1444,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.229
+            ],
+            [
+              -121.579,
+              38.229
+            ],
+            [
+              -121.579,
+              38.271
+            ],
+            [
+              -121.621,
+              38.271
+            ],
+            [
+              -121.621,
+              38.229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0193",
+        "farm_name": "SDF Farm 0193",
+        "crop_type": "grapes",
+        "risk_score": 0.0575,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.229
+            ],
+            [
+              -121.429,
+              38.229
+            ],
+            [
+              -121.429,
+              38.271
+            ],
+            [
+              -121.471,
+              38.271
+            ],
+            [
+              -121.471,
+              38.229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0195",
+        "farm_name": "SDF Farm 0195",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.229
+            ],
+            [
+              -121.329,
+              38.229
+            ],
+            [
+              -121.329,
+              38.271
+            ],
+            [
+              -121.371,
+              38.271
+            ],
+            [
+              -121.371,
+              38.229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0213",
+        "farm_name": "SDF Farm 0213",
+        "crop_type": "grapes",
+        "risk_score": 0.249,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.121,
+              38.278999999999996
+            ],
+            [
+              -122.079,
+              38.278999999999996
+            ],
+            [
+              -122.079,
+              38.321
+            ],
+            [
+              -122.121,
+              38.321
+            ],
+            [
+              -122.121,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0217",
+        "farm_name": "SDF Farm 0217",
+        "crop_type": "almond",
+        "risk_score": 0.3003,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.278999999999996
+            ],
+            [
+              -121.879,
+              38.278999999999996
+            ],
+            [
+              -121.879,
+              38.321
+            ],
+            [
+              -121.921,
+              38.321
+            ],
+            [
+              -121.921,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0222",
+        "farm_name": "SDF Farm 0222",
+        "crop_type": "field_crop",
+        "risk_score": 0.2178,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.278999999999996
+            ],
+            [
+              -121.629,
+              38.278999999999996
+            ],
+            [
+              -121.629,
+              38.321
+            ],
+            [
+              -121.671,
+              38.321
+            ],
+            [
+              -121.671,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0224",
+        "farm_name": "SDF Farm 0224",
+        "crop_type": "field_crop",
+        "risk_score": 0.1485,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.278999999999996
+            ],
+            [
+              -121.529,
+              38.278999999999996
+            ],
+            [
+              -121.529,
+              38.321
+            ],
+            [
+              -121.571,
+              38.321
+            ],
+            [
+              -121.571,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0228",
+        "farm_name": "SDF Farm 0228",
+        "crop_type": "almond",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.278999999999996
+            ],
+            [
+              -121.329,
+              38.278999999999996
+            ],
+            [
+              -121.329,
+              38.321
+            ],
+            [
+              -121.371,
+              38.321
+            ],
+            [
+              -121.371,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0230",
+        "farm_name": "SDF Farm 0230",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.271,
+              38.278999999999996
+            ],
+            [
+              -121.229,
+              38.278999999999996
+            ],
+            [
+              -121.229,
+              38.321
+            ],
+            [
+              -121.271,
+              38.321
+            ],
+            [
+              -121.271,
+              38.278999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0232",
+        "farm_name": "SDF Farm 0232",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.821,
+              38.329
+            ],
+            [
+              -122.779,
+              38.329
+            ],
+            [
+              -122.779,
+              38.371
+            ],
+            [
+              -122.821,
+              38.371
+            ],
+            [
+              -122.821,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0233",
+        "farm_name": "SDF Farm 0233",
+        "crop_type": "orchard",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.329
+            ],
+            [
+              -122.729,
+              38.329
+            ],
+            [
+              -122.729,
+              38.371
+            ],
+            [
+              -122.771,
+              38.371
+            ],
+            [
+              -122.771,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0241",
+        "farm_name": "SDF Farm 0241",
+        "crop_type": "grapes",
+        "risk_score": 0.1123,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.371,
+              38.329
+            ],
+            [
+              -122.329,
+              38.329
+            ],
+            [
+              -122.329,
+              38.371
+            ],
+            [
+              -122.371,
+              38.371
+            ],
+            [
+              -122.371,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0256",
+        "farm_name": "SDF Farm 0256",
+        "crop_type": "grapes",
+        "risk_score": 0.2659,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.329
+            ],
+            [
+              -121.579,
+              38.329
+            ],
+            [
+              -121.579,
+              38.371
+            ],
+            [
+              -121.621,
+              38.371
+            ],
+            [
+              -121.621,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0257",
+        "farm_name": "SDF Farm 0257",
+        "crop_type": "orchard",
+        "risk_score": 0.1833,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.329
+            ],
+            [
+              -121.529,
+              38.329
+            ],
+            [
+              -121.529,
+              38.371
+            ],
+            [
+              -121.571,
+              38.371
+            ],
+            [
+              -121.571,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0258",
+        "farm_name": "SDF Farm 0258",
+        "crop_type": "almond",
+        "risk_score": 0.1561,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.329
+            ],
+            [
+              -121.479,
+              38.329
+            ],
+            [
+              -121.479,
+              38.371
+            ],
+            [
+              -121.521,
+              38.371
+            ],
+            [
+              -121.521,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0261",
+        "farm_name": "SDF Farm 0261",
+        "crop_type": "almond",
+        "risk_score": 0.039,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.329
+            ],
+            [
+              -121.329,
+              38.329
+            ],
+            [
+              -121.329,
+              38.371
+            ],
+            [
+              -121.371,
+              38.371
+            ],
+            [
+              -121.371,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0263",
+        "farm_name": "SDF Farm 0263",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.271,
+              38.329
+            ],
+            [
+              -121.229,
+              38.329
+            ],
+            [
+              -121.229,
+              38.371
+            ],
+            [
+              -121.271,
+              38.371
+            ],
+            [
+              -121.271,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0264",
+        "farm_name": "SDF Farm 0264",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.221,
+              38.329
+            ],
+            [
+              -121.179,
+              38.329
+            ],
+            [
+              -121.179,
+              38.371
+            ],
+            [
+              -121.221,
+              38.371
+            ],
+            [
+              -121.221,
+              38.329
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0266",
+        "farm_name": "SDF Farm 0266",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.379
+            ],
+            [
+              -122.729,
+              38.379
+            ],
+            [
+              -122.729,
+              38.421
+            ],
+            [
+              -122.771,
+              38.421
+            ],
+            [
+              -122.771,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0274",
+        "farm_name": "SDF Farm 0274",
+        "crop_type": "grapes",
+        "risk_score": 0.0728,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.371,
+              38.379
+            ],
+            [
+              -122.329,
+              38.379
+            ],
+            [
+              -122.329,
+              38.421
+            ],
+            [
+              -122.371,
+              38.421
+            ],
+            [
+              -122.371,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0283",
+        "farm_name": "SDF Farm 0283",
+        "crop_type": "grapes",
+        "risk_score": 0.4654,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.379
+            ],
+            [
+              -121.879,
+              38.379
+            ],
+            [
+              -121.879,
+              38.421
+            ],
+            [
+              -121.921,
+              38.421
+            ],
+            [
+              -121.921,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0284",
+        "farm_name": "SDF Farm 0284",
+        "crop_type": "almond",
+        "risk_score": 0.4113,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.379
+            ],
+            [
+              -121.829,
+              38.379
+            ],
+            [
+              -121.829,
+              38.421
+            ],
+            [
+              -121.871,
+              38.421
+            ],
+            [
+              -121.871,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0285",
+        "farm_name": "SDF Farm 0285",
+        "crop_type": "almond",
+        "risk_score": 0.4025,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.379
+            ],
+            [
+              -121.779,
+              38.379
+            ],
+            [
+              -121.779,
+              38.421
+            ],
+            [
+              -121.821,
+              38.421
+            ],
+            [
+              -121.821,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0286",
+        "farm_name": "SDF Farm 0286",
+        "crop_type": "field_crop",
+        "risk_score": 0.3643,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.379
+            ],
+            [
+              -121.729,
+              38.379
+            ],
+            [
+              -121.729,
+              38.421
+            ],
+            [
+              -121.771,
+              38.421
+            ],
+            [
+              -121.771,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0288",
+        "farm_name": "SDF Farm 0288",
+        "crop_type": "field_crop",
+        "risk_score": 0.3032,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.379
+            ],
+            [
+              -121.629,
+              38.379
+            ],
+            [
+              -121.629,
+              38.421
+            ],
+            [
+              -121.671,
+              38.421
+            ],
+            [
+              -121.671,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0295",
+        "farm_name": "SDF Farm 0295",
+        "crop_type": "field_crop",
+        "risk_score": 0.0163,
+        "risk_level": "low",
+        "top_driver": "fire_intensity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.321,
+              38.379
+            ],
+            [
+              -121.279,
+              38.379
+            ],
+            [
+              -121.279,
+              38.421
+            ],
+            [
+              -121.321,
+              38.421
+            ],
+            [
+              -121.321,
+              38.379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0298",
+        "farm_name": "SDF Farm 0298",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.821,
+              38.429
+            ],
+            [
+              -122.779,
+              38.429
+            ],
+            [
+              -122.779,
+              38.471000000000004
+            ],
+            [
+              -122.821,
+              38.471000000000004
+            ],
+            [
+              -122.821,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0306",
+        "farm_name": "SDF Farm 0306",
+        "crop_type": "grapes",
+        "risk_score": 0.0349,
+        "risk_level": "low",
+        "top_driver": "fire_intensity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.421,
+              38.429
+            ],
+            [
+              -122.379,
+              38.429
+            ],
+            [
+              -122.379,
+              38.471000000000004
+            ],
+            [
+              -122.421,
+              38.471000000000004
+            ],
+            [
+              -122.421,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0316",
+        "farm_name": "SDF Farm 0316",
+        "crop_type": "field_crop",
+        "risk_score": 0.4366,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.429
+            ],
+            [
+              -121.879,
+              38.429
+            ],
+            [
+              -121.879,
+              38.471000000000004
+            ],
+            [
+              -121.921,
+              38.471000000000004
+            ],
+            [
+              -121.921,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0320",
+        "farm_name": "SDF Farm 0320",
+        "crop_type": "field_crop",
+        "risk_score": 0.3738,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.429
+            ],
+            [
+              -121.679,
+              38.429
+            ],
+            [
+              -121.679,
+              38.471000000000004
+            ],
+            [
+              -121.721,
+              38.471000000000004
+            ],
+            [
+              -121.721,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0323",
+        "farm_name": "SDF Farm 0323",
+        "crop_type": "field_crop",
+        "risk_score": 0.2333,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.429
+            ],
+            [
+              -121.529,
+              38.429
+            ],
+            [
+              -121.529,
+              38.471000000000004
+            ],
+            [
+              -121.571,
+              38.471000000000004
+            ],
+            [
+              -121.571,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0324",
+        "farm_name": "SDF Farm 0324",
+        "crop_type": "grapes",
+        "risk_score": 0.2219,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.429
+            ],
+            [
+              -121.479,
+              38.429
+            ],
+            [
+              -121.479,
+              38.471000000000004
+            ],
+            [
+              -121.521,
+              38.471000000000004
+            ],
+            [
+              -121.521,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0329",
+        "farm_name": "SDF Farm 0329",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.271,
+              38.429
+            ],
+            [
+              -121.229,
+              38.429
+            ],
+            [
+              -121.229,
+              38.471000000000004
+            ],
+            [
+              -121.271,
+              38.471000000000004
+            ],
+            [
+              -121.271,
+              38.429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0337",
+        "farm_name": "SDF Farm 0337",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.521,
+              38.479
+            ],
+            [
+              -122.479,
+              38.479
+            ],
+            [
+              -122.479,
+              38.521
+            ],
+            [
+              -122.521,
+              38.521
+            ],
+            [
+              -122.521,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0338",
+        "farm_name": "SDF Farm 0338",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.471,
+              38.479
+            ],
+            [
+              -122.429,
+              38.479
+            ],
+            [
+              -122.429,
+              38.521
+            ],
+            [
+              -122.471,
+              38.521
+            ],
+            [
+              -122.471,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0339",
+        "farm_name": "SDF Farm 0339",
+        "crop_type": "grapes",
+        "risk_score": 0.0435,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.421,
+              38.479
+            ],
+            [
+              -122.379,
+              38.479
+            ],
+            [
+              -122.379,
+              38.521
+            ],
+            [
+              -122.421,
+              38.521
+            ],
+            [
+              -122.421,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0347",
+        "farm_name": "SDF Farm 0347",
+        "crop_type": "walnut",
+        "risk_score": 0.4158,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              38.479
+            ],
+            [
+              -121.979,
+              38.479
+            ],
+            [
+              -121.979,
+              38.521
+            ],
+            [
+              -122.021,
+              38.521
+            ],
+            [
+              -122.021,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0351",
+        "farm_name": "SDF Farm 0351",
+        "crop_type": "walnut",
+        "risk_score": 0.5053,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.479
+            ],
+            [
+              -121.779,
+              38.479
+            ],
+            [
+              -121.779,
+              38.521
+            ],
+            [
+              -121.821,
+              38.521
+            ],
+            [
+              -121.821,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0354",
+        "farm_name": "SDF Farm 0354",
+        "crop_type": "grapes",
+        "risk_score": 0.4044,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.479
+            ],
+            [
+              -121.629,
+              38.479
+            ],
+            [
+              -121.629,
+              38.521
+            ],
+            [
+              -121.671,
+              38.521
+            ],
+            [
+              -121.671,
+              38.479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0373",
+        "farm_name": "SDF Farm 0373",
+        "crop_type": "grapes",
+        "risk_score": 0.0988,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.371,
+              38.528999999999996
+            ],
+            [
+              -122.329,
+              38.528999999999996
+            ],
+            [
+              -122.329,
+              38.571
+            ],
+            [
+              -122.371,
+              38.571
+            ],
+            [
+              -122.371,
+              38.528999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0381",
+        "farm_name": "SDF Farm 0381",
+        "crop_type": "grapes",
+        "risk_score": 0.5071,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              38.528999999999996
+            ],
+            [
+              -121.929,
+              38.528999999999996
+            ],
+            [
+              -121.929,
+              38.571
+            ],
+            [
+              -121.971,
+              38.571
+            ],
+            [
+              -121.971,
+              38.528999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0382",
+        "farm_name": "SDF Farm 0382",
+        "crop_type": "walnut",
+        "risk_score": 0.5069,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.528999999999996
+            ],
+            [
+              -121.879,
+              38.528999999999996
+            ],
+            [
+              -121.879,
+              38.571
+            ],
+            [
+              -121.921,
+              38.571
+            ],
+            [
+              -121.921,
+              38.528999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0384",
+        "farm_name": "SDF Farm 0384",
+        "crop_type": "almond",
+        "risk_score": 0.5055,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.528999999999996
+            ],
+            [
+              -121.779,
+              38.528999999999996
+            ],
+            [
+              -121.779,
+              38.571
+            ],
+            [
+              -121.821,
+              38.571
+            ],
+            [
+              -121.821,
+              38.528999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0387",
+        "farm_name": "SDF Farm 0387",
+        "crop_type": "field_crop",
+        "risk_score": 0.3517,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.528999999999996
+            ],
+            [
+              -121.629,
+              38.528999999999996
+            ],
+            [
+              -121.629,
+              38.571
+            ],
+            [
+              -121.671,
+              38.571
+            ],
+            [
+              -121.671,
+              38.528999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0398",
+        "farm_name": "SDF Farm 0398",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.579
+            ],
+            [
+              -122.729,
+              38.579
+            ],
+            [
+              -122.729,
+              38.621
+            ],
+            [
+              -122.771,
+              38.621
+            ],
+            [
+              -122.771,
+              38.579
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0414",
+        "farm_name": "SDF Farm 0414",
+        "crop_type": "field_crop",
+        "risk_score": 0.4114,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              38.579
+            ],
+            [
+              -121.929,
+              38.579
+            ],
+            [
+              -121.929,
+              38.621
+            ],
+            [
+              -121.971,
+              38.621
+            ],
+            [
+              -121.971,
+              38.579
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0415",
+        "farm_name": "SDF Farm 0415",
+        "crop_type": "almond",
+        "risk_score": 0.4611,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.579
+            ],
+            [
+              -121.879,
+              38.579
+            ],
+            [
+              -121.879,
+              38.621
+            ],
+            [
+              -121.921,
+              38.621
+            ],
+            [
+              -121.921,
+              38.579
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0417",
+        "farm_name": "SDF Farm 0417",
+        "crop_type": "almond",
+        "risk_score": 0.4604,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.579
+            ],
+            [
+              -121.779,
+              38.579
+            ],
+            [
+              -121.779,
+              38.621
+            ],
+            [
+              -121.821,
+              38.621
+            ],
+            [
+              -121.821,
+              38.579
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0420",
+        "farm_name": "SDF Farm 0420",
+        "crop_type": "field_crop",
+        "risk_score": 0.3343,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.579
+            ],
+            [
+              -121.629,
+              38.579
+            ],
+            [
+              -121.629,
+              38.621
+            ],
+            [
+              -121.671,
+              38.621
+            ],
+            [
+              -121.671,
+              38.579
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0430",
+        "farm_name": "SDF Farm 0430",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.821,
+              38.629
+            ],
+            [
+              -122.779,
+              38.629
+            ],
+            [
+              -122.779,
+              38.671
+            ],
+            [
+              -122.821,
+              38.671
+            ],
+            [
+              -122.821,
+              38.629
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0452",
+        "farm_name": "SDF Farm 0452",
+        "crop_type": "field_crop",
+        "risk_score": 0.3375,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.629
+            ],
+            [
+              -121.679,
+              38.629
+            ],
+            [
+              -121.679,
+              38.671
+            ],
+            [
+              -121.721,
+              38.671
+            ],
+            [
+              -121.721,
+              38.629
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0453",
+        "farm_name": "SDF Farm 0453",
+        "crop_type": "field_crop",
+        "risk_score": 0.3039,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.629
+            ],
+            [
+              -121.629,
+              38.629
+            ],
+            [
+              -121.629,
+              38.671
+            ],
+            [
+              -121.671,
+              38.671
+            ],
+            [
+              -121.671,
+              38.629
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0479",
+        "farm_name": "SDF Farm 0479",
+        "crop_type": "almond",
+        "risk_score": 0.308,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              38.679
+            ],
+            [
+              -121.979,
+              38.679
+            ],
+            [
+              -121.979,
+              38.721000000000004
+            ],
+            [
+              -122.021,
+              38.721000000000004
+            ],
+            [
+              -122.021,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0480",
+        "farm_name": "SDF Farm 0480",
+        "crop_type": "almond",
+        "risk_score": 0.3311,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              38.679
+            ],
+            [
+              -121.929,
+              38.679
+            ],
+            [
+              -121.929,
+              38.721000000000004
+            ],
+            [
+              -121.971,
+              38.721000000000004
+            ],
+            [
+              -121.971,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0482",
+        "farm_name": "SDF Farm 0482",
+        "crop_type": "field_crop",
+        "risk_score": 0.3345,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.679
+            ],
+            [
+              -121.829,
+              38.679
+            ],
+            [
+              -121.829,
+              38.721000000000004
+            ],
+            [
+              -121.871,
+              38.721000000000004
+            ],
+            [
+              -121.871,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0484",
+        "farm_name": "SDF Farm 0484",
+        "crop_type": "nut",
+        "risk_score": 0.3305,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.679
+            ],
+            [
+              -121.729,
+              38.679
+            ],
+            [
+              -121.729,
+              38.721000000000004
+            ],
+            [
+              -121.771,
+              38.721000000000004
+            ],
+            [
+              -121.771,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0485",
+        "farm_name": "SDF Farm 0485",
+        "crop_type": "field_crop",
+        "risk_score": 0.2925,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.679
+            ],
+            [
+              -121.679,
+              38.679
+            ],
+            [
+              -121.679,
+              38.721000000000004
+            ],
+            [
+              -121.721,
+              38.721000000000004
+            ],
+            [
+              -121.721,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0486",
+        "farm_name": "SDF Farm 0486",
+        "crop_type": "field_crop",
+        "risk_score": 0.2645,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.679
+            ],
+            [
+              -121.629,
+              38.679
+            ],
+            [
+              -121.629,
+              38.721000000000004
+            ],
+            [
+              -121.671,
+              38.721000000000004
+            ],
+            [
+              -121.671,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0488",
+        "farm_name": "SDF Farm 0488",
+        "crop_type": "field_crop",
+        "risk_score": 0.1842,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.679
+            ],
+            [
+              -121.529,
+              38.679
+            ],
+            [
+              -121.529,
+              38.721000000000004
+            ],
+            [
+              -121.571,
+              38.721000000000004
+            ],
+            [
+              -121.571,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0489",
+        "farm_name": "SDF Farm 0489",
+        "crop_type": "field_crop",
+        "risk_score": 0.1494,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.679
+            ],
+            [
+              -121.479,
+              38.679
+            ],
+            [
+              -121.479,
+              38.721000000000004
+            ],
+            [
+              -121.521,
+              38.721000000000004
+            ],
+            [
+              -121.521,
+              38.679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0502",
+        "farm_name": "SDF Farm 0502",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.521,
+              38.729
+            ],
+            [
+              -122.479,
+              38.729
+            ],
+            [
+              -122.479,
+              38.771
+            ],
+            [
+              -122.521,
+              38.771
+            ],
+            [
+              -122.521,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0509",
+        "farm_name": "SDF Farm 0509",
+        "crop_type": "walnut",
+        "risk_score": 0.1691,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.171,
+              38.729
+            ],
+            [
+              -122.129,
+              38.729
+            ],
+            [
+              -122.129,
+              38.771
+            ],
+            [
+              -122.171,
+              38.771
+            ],
+            [
+              -122.171,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0515",
+        "farm_name": "SDF Farm 0515",
+        "crop_type": "almond",
+        "risk_score": 0.2905,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.729
+            ],
+            [
+              -121.829,
+              38.729
+            ],
+            [
+              -121.829,
+              38.771
+            ],
+            [
+              -121.871,
+              38.771
+            ],
+            [
+              -121.871,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0517",
+        "farm_name": "SDF Farm 0517",
+        "crop_type": "grapes",
+        "risk_score": 0.3003,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.729
+            ],
+            [
+              -121.729,
+              38.729
+            ],
+            [
+              -121.729,
+              38.771
+            ],
+            [
+              -121.771,
+              38.771
+            ],
+            [
+              -121.771,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0520",
+        "farm_name": "SDF Farm 0520",
+        "crop_type": "grapes",
+        "risk_score": 0.2056,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.729
+            ],
+            [
+              -121.579,
+              38.729
+            ],
+            [
+              -121.579,
+              38.771
+            ],
+            [
+              -121.621,
+              38.771
+            ],
+            [
+              -121.621,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0521",
+        "farm_name": "SDF Farm 0521",
+        "crop_type": "field_crop",
+        "risk_score": 0.1497,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.729
+            ],
+            [
+              -121.529,
+              38.729
+            ],
+            [
+              -121.529,
+              38.771
+            ],
+            [
+              -121.571,
+              38.771
+            ],
+            [
+              -121.571,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0522",
+        "farm_name": "SDF Farm 0522",
+        "crop_type": "field_crop",
+        "risk_score": 0.1181,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.729
+            ],
+            [
+              -121.479,
+              38.729
+            ],
+            [
+              -121.479,
+              38.771
+            ],
+            [
+              -121.521,
+              38.771
+            ],
+            [
+              -121.521,
+              38.729
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0530",
+        "farm_name": "SDF Farm 0530",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.778999999999996
+            ],
+            [
+              -122.729,
+              38.778999999999996
+            ],
+            [
+              -122.729,
+              38.821
+            ],
+            [
+              -122.771,
+              38.821
+            ],
+            [
+              -122.771,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0545",
+        "farm_name": "SDF Farm 0545",
+        "crop_type": "almond",
+        "risk_score": 0.2009,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              38.778999999999996
+            ],
+            [
+              -121.979,
+              38.778999999999996
+            ],
+            [
+              -121.979,
+              38.821
+            ],
+            [
+              -122.021,
+              38.821
+            ],
+            [
+              -122.021,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0547",
+        "farm_name": "SDF Farm 0547",
+        "crop_type": "walnut",
+        "risk_score": 0.2266,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.778999999999996
+            ],
+            [
+              -121.879,
+              38.778999999999996
+            ],
+            [
+              -121.879,
+              38.821
+            ],
+            [
+              -121.921,
+              38.821
+            ],
+            [
+              -121.921,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0548",
+        "farm_name": "SDF Farm 0548",
+        "crop_type": "almond",
+        "risk_score": 0.2298,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.778999999999996
+            ],
+            [
+              -121.829,
+              38.778999999999996
+            ],
+            [
+              -121.829,
+              38.821
+            ],
+            [
+              -121.871,
+              38.821
+            ],
+            [
+              -121.871,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0550",
+        "farm_name": "SDF Farm 0550",
+        "crop_type": "field_crop",
+        "risk_score": 0.206,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.778999999999996
+            ],
+            [
+              -121.729,
+              38.778999999999996
+            ],
+            [
+              -121.729,
+              38.821
+            ],
+            [
+              -121.771,
+              38.821
+            ],
+            [
+              -121.771,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0551",
+        "farm_name": "SDF Farm 0551",
+        "crop_type": "field_crop",
+        "risk_score": 0.1907,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.778999999999996
+            ],
+            [
+              -121.679,
+              38.778999999999996
+            ],
+            [
+              -121.679,
+              38.821
+            ],
+            [
+              -121.721,
+              38.821
+            ],
+            [
+              -121.721,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0552",
+        "farm_name": "SDF Farm 0552",
+        "crop_type": "field_crop",
+        "risk_score": 0.1705,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.778999999999996
+            ],
+            [
+              -121.629,
+              38.778999999999996
+            ],
+            [
+              -121.629,
+              38.821
+            ],
+            [
+              -121.671,
+              38.821
+            ],
+            [
+              -121.671,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0554",
+        "farm_name": "SDF Farm 0554",
+        "crop_type": "field_crop",
+        "risk_score": 0.1108,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.778999999999996
+            ],
+            [
+              -121.529,
+              38.778999999999996
+            ],
+            [
+              -121.529,
+              38.821
+            ],
+            [
+              -121.571,
+              38.821
+            ],
+            [
+              -121.571,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0555",
+        "farm_name": "SDF Farm 0555",
+        "crop_type": "almond",
+        "risk_score": 0.0863,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.778999999999996
+            ],
+            [
+              -121.479,
+              38.778999999999996
+            ],
+            [
+              -121.479,
+              38.821
+            ],
+            [
+              -121.521,
+              38.821
+            ],
+            [
+              -121.521,
+              38.778999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0579",
+        "farm_name": "SDF Farm 0579",
+        "crop_type": "almond",
+        "risk_score": 0.158,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              38.829
+            ],
+            [
+              -121.929,
+              38.829
+            ],
+            [
+              -121.929,
+              38.871
+            ],
+            [
+              -121.971,
+              38.871
+            ],
+            [
+              -121.971,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0581",
+        "farm_name": "SDF Farm 0581",
+        "crop_type": "field_crop",
+        "risk_score": 0.1611,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.829
+            ],
+            [
+              -121.829,
+              38.829
+            ],
+            [
+              -121.829,
+              38.871
+            ],
+            [
+              -121.871,
+              38.871
+            ],
+            [
+              -121.871,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0582",
+        "farm_name": "SDF Farm 0582",
+        "crop_type": "field_crop",
+        "risk_score": 0.1583,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.829
+            ],
+            [
+              -121.779,
+              38.829
+            ],
+            [
+              -121.779,
+              38.871
+            ],
+            [
+              -121.821,
+              38.871
+            ],
+            [
+              -121.821,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0584",
+        "farm_name": "SDF Farm 0584",
+        "crop_type": "field_crop",
+        "risk_score": 0.137,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.829
+            ],
+            [
+              -121.679,
+              38.829
+            ],
+            [
+              -121.679,
+              38.871
+            ],
+            [
+              -121.721,
+              38.871
+            ],
+            [
+              -121.721,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0586",
+        "farm_name": "SDF Farm 0586",
+        "crop_type": "field_crop",
+        "risk_score": 0.0919,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.829
+            ],
+            [
+              -121.579,
+              38.829
+            ],
+            [
+              -121.579,
+              38.871
+            ],
+            [
+              -121.621,
+              38.871
+            ],
+            [
+              -121.621,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0588",
+        "farm_name": "SDF Farm 0588",
+        "crop_type": "field_crop",
+        "risk_score": 0.0427,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.829
+            ],
+            [
+              -121.479,
+              38.829
+            ],
+            [
+              -121.479,
+              38.871
+            ],
+            [
+              -121.521,
+              38.871
+            ],
+            [
+              -121.521,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0589",
+        "farm_name": "SDF Farm 0589",
+        "crop_type": "field_crop",
+        "risk_score": 0.0069,
+        "risk_level": "low",
+        "top_driver": "fire_intensity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.829
+            ],
+            [
+              -121.429,
+              38.829
+            ],
+            [
+              -121.429,
+              38.871
+            ],
+            [
+              -121.471,
+              38.871
+            ],
+            [
+              -121.471,
+              38.829
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0596",
+        "farm_name": "SDF Farm 0596",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.879
+            ],
+            [
+              -122.729,
+              38.879
+            ],
+            [
+              -122.729,
+              38.921
+            ],
+            [
+              -122.771,
+              38.921
+            ],
+            [
+              -122.771,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0597",
+        "farm_name": "SDF Farm 0597",
+        "crop_type": "grapes",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.721,
+              38.879
+            ],
+            [
+              -122.679,
+              38.879
+            ],
+            [
+              -122.679,
+              38.921
+            ],
+            [
+              -122.721,
+              38.921
+            ],
+            [
+              -122.721,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0610",
+        "farm_name": "SDF Farm 0610",
+        "crop_type": "almond",
+        "risk_score": 0.0707,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.071,
+              38.879
+            ],
+            [
+              -122.029,
+              38.879
+            ],
+            [
+              -122.029,
+              38.921
+            ],
+            [
+              -122.071,
+              38.921
+            ],
+            [
+              -122.071,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0611",
+        "farm_name": "SDF Farm 0611",
+        "crop_type": "almond",
+        "risk_score": 0.0869,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              38.879
+            ],
+            [
+              -121.979,
+              38.879
+            ],
+            [
+              -121.979,
+              38.921
+            ],
+            [
+              -122.021,
+              38.921
+            ],
+            [
+              -122.021,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0613",
+        "farm_name": "SDF Farm 0613",
+        "crop_type": "field_crop",
+        "risk_score": 0.101,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.879
+            ],
+            [
+              -121.879,
+              38.879
+            ],
+            [
+              -121.879,
+              38.921
+            ],
+            [
+              -121.921,
+              38.921
+            ],
+            [
+              -121.921,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0615",
+        "farm_name": "SDF Farm 0615",
+        "crop_type": "field_crop",
+        "risk_score": 0.1008,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.879
+            ],
+            [
+              -121.779,
+              38.879
+            ],
+            [
+              -121.779,
+              38.921
+            ],
+            [
+              -121.821,
+              38.921
+            ],
+            [
+              -121.821,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0616",
+        "farm_name": "SDF Farm 0616",
+        "crop_type": "field_crop",
+        "risk_score": 0.0937,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.879
+            ],
+            [
+              -121.729,
+              38.879
+            ],
+            [
+              -121.729,
+              38.921
+            ],
+            [
+              -121.771,
+              38.921
+            ],
+            [
+              -121.771,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0617",
+        "farm_name": "SDF Farm 0617",
+        "crop_type": "field_crop",
+        "risk_score": 0.0823,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.879
+            ],
+            [
+              -121.679,
+              38.879
+            ],
+            [
+              -121.679,
+              38.921
+            ],
+            [
+              -121.721,
+              38.921
+            ],
+            [
+              -121.721,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0618",
+        "farm_name": "SDF Farm 0618",
+        "crop_type": "field_crop",
+        "risk_score": 0.063,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.879
+            ],
+            [
+              -121.629,
+              38.879
+            ],
+            [
+              -121.629,
+              38.921
+            ],
+            [
+              -121.671,
+              38.921
+            ],
+            [
+              -121.671,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0620",
+        "farm_name": "SDF Farm 0620",
+        "crop_type": "field_crop",
+        "risk_score": 0.0242,
+        "risk_level": "low",
+        "top_driver": "fire_intensity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.571,
+              38.879
+            ],
+            [
+              -121.529,
+              38.879
+            ],
+            [
+              -121.529,
+              38.921
+            ],
+            [
+              -121.571,
+              38.921
+            ],
+            [
+              -121.571,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0621",
+        "farm_name": "SDF Farm 0621",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.879
+            ],
+            [
+              -121.479,
+              38.879
+            ],
+            [
+              -121.479,
+              38.921
+            ],
+            [
+              -121.521,
+              38.921
+            ],
+            [
+              -121.521,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0622",
+        "farm_name": "SDF Farm 0622",
+        "crop_type": "field_crop",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.879
+            ],
+            [
+              -121.429,
+              38.879
+            ],
+            [
+              -121.429,
+              38.921
+            ],
+            [
+              -121.471,
+              38.921
+            ],
+            [
+              -121.471,
+              38.879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0001",
+        "farm_name": "SDF Farm 0001",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.821,
+              37.979
+            ],
+            [
+              -122.779,
+              37.979
+            ],
+            [
+              -122.779,
+              38.021
+            ],
+            [
+              -122.821,
+              38.021
+            ],
+            [
+              -122.821,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0002",
+        "farm_name": "SDF Farm 0002",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              37.979
+            ],
+            [
+              -122.729,
+              37.979
+            ],
+            [
+              -122.729,
+              38.021
+            ],
+            [
+              -122.771,
+              38.021
+            ],
+            [
+              -122.771,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0003",
+        "farm_name": "SDF Farm 0003",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.721,
+              37.979
+            ],
+            [
+              -122.679,
+              37.979
+            ],
+            [
+              -122.679,
+              38.021
+            ],
+            [
+              -122.721,
+              38.021
+            ],
+            [
+              -122.721,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0004",
+        "farm_name": "SDF Farm 0004",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0352,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.671,
+              37.979
+            ],
+            [
+              -122.629,
+              37.979
+            ],
+            [
+              -122.629,
+              38.021
+            ],
+            [
+              -122.671,
+              38.021
+            ],
+            [
+              -122.671,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0005",
+        "farm_name": "SDF Farm 0005",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0832,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.621,
+              37.979
+            ],
+            [
+              -122.579,
+              37.979
+            ],
+            [
+              -122.579,
+              38.021
+            ],
+            [
+              -122.621,
+              38.021
+            ],
+            [
+              -122.621,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0006",
+        "farm_name": "SDF Farm 0006",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1312,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.571,
+              37.979
+            ],
+            [
+              -122.529,
+              37.979
+            ],
+            [
+              -122.529,
+              38.021
+            ],
+            [
+              -122.571,
+              38.021
+            ],
+            [
+              -122.571,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0007",
+        "farm_name": "SDF Farm 0007",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1792,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.521,
+              37.979
+            ],
+            [
+              -122.479,
+              37.979
+            ],
+            [
+              -122.479,
+              38.021
+            ],
+            [
+              -122.521,
+              38.021
+            ],
+            [
+              -122.521,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0008",
+        "farm_name": "SDF Farm 0008",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2272,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.471,
+              37.979
+            ],
+            [
+              -122.429,
+              37.979
+            ],
+            [
+              -122.429,
+              38.021
+            ],
+            [
+              -122.471,
+              38.021
+            ],
+            [
+              -122.471,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0009",
+        "farm_name": "SDF Farm 0009",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2751,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.421,
+              37.979
+            ],
+            [
+              -122.379,
+              37.979
+            ],
+            [
+              -122.379,
+              38.021
+            ],
+            [
+              -122.421,
+              38.021
+            ],
+            [
+              -122.421,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0010",
+        "farm_name": "SDF Farm 0010",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.323,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.371,
+              37.979
+            ],
+            [
+              -122.329,
+              37.979
+            ],
+            [
+              -122.329,
+              38.021
+            ],
+            [
+              -122.371,
+              38.021
+            ],
+            [
+              -122.371,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0011",
+        "farm_name": "SDF Farm 0011",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3709,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.321,
+              37.979
+            ],
+            [
+              -122.279,
+              37.979
+            ],
+            [
+              -122.279,
+              38.021
+            ],
+            [
+              -122.321,
+              38.021
+            ],
+            [
+              -122.321,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0012",
+        "farm_name": "SDF Farm 0012",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4186,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.271,
+              37.979
+            ],
+            [
+              -122.229,
+              37.979
+            ],
+            [
+              -122.229,
+              38.021
+            ],
+            [
+              -122.271,
+              38.021
+            ],
+            [
+              -122.271,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0013",
+        "farm_name": "SDF Farm 0013",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4659,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.221,
+              37.979
+            ],
+            [
+              -122.179,
+              37.979
+            ],
+            [
+              -122.179,
+              38.021
+            ],
+            [
+              -122.221,
+              38.021
+            ],
+            [
+              -122.221,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0014",
+        "farm_name": "SDF Farm 0014",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.5114,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.171,
+              37.979
+            ],
+            [
+              -122.129,
+              37.979
+            ],
+            [
+              -122.129,
+              38.021
+            ],
+            [
+              -122.171,
+              38.021
+            ],
+            [
+              -122.171,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0015",
+        "farm_name": "SDF Farm 0015",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.527,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.121,
+              37.979
+            ],
+            [
+              -122.079,
+              37.979
+            ],
+            [
+              -122.079,
+              38.021
+            ],
+            [
+              -122.121,
+              38.021
+            ],
+            [
+              -122.121,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0016",
+        "farm_name": "SDF Farm 0016",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4853,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.071,
+              37.979
+            ],
+            [
+              -122.029,
+              37.979
+            ],
+            [
+              -122.029,
+              38.021
+            ],
+            [
+              -122.071,
+              38.021
+            ],
+            [
+              -122.071,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0017",
+        "farm_name": "SDF Farm 0017",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4384,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              37.979
+            ],
+            [
+              -121.979,
+              37.979
+            ],
+            [
+              -121.979,
+              38.021
+            ],
+            [
+              -122.021,
+              38.021
+            ],
+            [
+              -122.021,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0018",
+        "farm_name": "SDF Farm 0018",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3908,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              37.979
+            ],
+            [
+              -121.929,
+              37.979
+            ],
+            [
+              -121.929,
+              38.021
+            ],
+            [
+              -121.971,
+              38.021
+            ],
+            [
+              -121.971,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0019",
+        "farm_name": "SDF Farm 0019",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.343,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              37.979
+            ],
+            [
+              -121.879,
+              37.979
+            ],
+            [
+              -121.879,
+              38.021
+            ],
+            [
+              -121.921,
+              38.021
+            ],
+            [
+              -121.921,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0020",
+        "farm_name": "SDF Farm 0020",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2951,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              37.979
+            ],
+            [
+              -121.829,
+              37.979
+            ],
+            [
+              -121.829,
+              38.021
+            ],
+            [
+              -121.871,
+              38.021
+            ],
+            [
+              -121.871,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0021",
+        "farm_name": "SDF Farm 0021",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2471,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              37.979
+            ],
+            [
+              -121.779,
+              37.979
+            ],
+            [
+              -121.779,
+              38.021
+            ],
+            [
+              -121.821,
+              38.021
+            ],
+            [
+              -121.821,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0022",
+        "farm_name": "SDF Farm 0022",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1992,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              37.979
+            ],
+            [
+              -121.729,
+              37.979
+            ],
+            [
+              -121.729,
+              38.021
+            ],
+            [
+              -121.771,
+              38.021
+            ],
+            [
+              -121.771,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0023",
+        "farm_name": "SDF Farm 0023",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1512,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              37.979
+            ],
+            [
+              -121.679,
+              37.979
+            ],
+            [
+              -121.679,
+              38.021
+            ],
+            [
+              -121.721,
+              38.021
+            ],
+            [
+              -121.721,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0024",
+        "farm_name": "SDF Farm 0024",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1032,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              37.979
+            ],
+            [
+              -121.629,
+              37.979
+            ],
+            [
+              -121.629,
+              38.021
+            ],
+            [
+              -121.671,
+              38.021
+            ],
+            [
+              -121.671,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0025",
+        "farm_name": "SDF Farm 0025",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0552,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              37.979
+            ],
+            [
+              -121.579,
+              37.979
+            ],
+            [
+              -121.579,
+              38.021
+            ],
+            [
+              -121.621,
+              38.021
+            ],
+            [
+              -121.621,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0028",
+        "farm_name": "SDF Farm 0028",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              37.979
+            ],
+            [
+              -121.429,
+              37.979
+            ],
+            [
+              -121.429,
+              38.021
+            ],
+            [
+              -121.471,
+              38.021
+            ],
+            [
+              -121.471,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0030",
+        "farm_name": "SDF Farm 0030",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              37.979
+            ],
+            [
+              -121.329,
+              37.979
+            ],
+            [
+              -121.329,
+              38.021
+            ],
+            [
+              -121.371,
+              38.021
+            ],
+            [
+              -121.371,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0031",
+        "farm_name": "SDF Farm 0031",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.321,
+              37.979
+            ],
+            [
+              -121.279,
+              37.979
+            ],
+            [
+              -121.279,
+              38.021
+            ],
+            [
+              -121.321,
+              38.021
+            ],
+            [
+              -121.321,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0032",
+        "farm_name": "SDF Farm 0032",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.271,
+              37.979
+            ],
+            [
+              -121.229,
+              37.979
+            ],
+            [
+              -121.229,
+              38.021
+            ],
+            [
+              -121.271,
+              38.021
+            ],
+            [
+              -121.271,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0033",
+        "farm_name": "SDF Farm 0033",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.221,
+              37.979
+            ],
+            [
+              -121.179,
+              37.979
+            ],
+            [
+              -121.179,
+              38.021
+            ],
+            [
+              -121.221,
+              38.021
+            ],
+            [
+              -121.221,
+              37.979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0034",
+        "farm_name": "SDF Farm 0034",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.821,
+              38.028999999999996
+            ],
+            [
+              -122.779,
+              38.028999999999996
+            ],
+            [
+              -122.779,
+              38.071
+            ],
+            [
+              -122.821,
+              38.071
+            ],
+            [
+              -122.821,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0035",
+        "farm_name": "SDF Farm 0035",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.771,
+              38.028999999999996
+            ],
+            [
+              -122.729,
+              38.028999999999996
+            ],
+            [
+              -122.729,
+              38.071
+            ],
+            [
+              -122.771,
+              38.071
+            ],
+            [
+              -122.771,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0036",
+        "farm_name": "SDF Farm 0036",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.721,
+              38.028999999999996
+            ],
+            [
+              -122.679,
+              38.028999999999996
+            ],
+            [
+              -122.679,
+              38.071
+            ],
+            [
+              -122.721,
+              38.071
+            ],
+            [
+              -122.721,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0037",
+        "farm_name": "SDF Farm 0037",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0339,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.671,
+              38.028999999999996
+            ],
+            [
+              -122.629,
+              38.028999999999996
+            ],
+            [
+              -122.629,
+              38.071
+            ],
+            [
+              -122.671,
+              38.071
+            ],
+            [
+              -122.671,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0038",
+        "farm_name": "SDF Farm 0038",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0817,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.621,
+              38.028999999999996
+            ],
+            [
+              -122.579,
+              38.028999999999996
+            ],
+            [
+              -122.579,
+              38.071
+            ],
+            [
+              -122.621,
+              38.071
+            ],
+            [
+              -122.621,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0039",
+        "farm_name": "SDF Farm 0039",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1295,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.571,
+              38.028999999999996
+            ],
+            [
+              -122.529,
+              38.028999999999996
+            ],
+            [
+              -122.529,
+              38.071
+            ],
+            [
+              -122.571,
+              38.071
+            ],
+            [
+              -122.571,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0040",
+        "farm_name": "SDF Farm 0040",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1773,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.521,
+              38.028999999999996
+            ],
+            [
+              -122.479,
+              38.028999999999996
+            ],
+            [
+              -122.479,
+              38.071
+            ],
+            [
+              -122.521,
+              38.071
+            ],
+            [
+              -122.521,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0041",
+        "farm_name": "SDF Farm 0041",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2249,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.471,
+              38.028999999999996
+            ],
+            [
+              -122.429,
+              38.028999999999996
+            ],
+            [
+              -122.429,
+              38.071
+            ],
+            [
+              -122.471,
+              38.071
+            ],
+            [
+              -122.471,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0042",
+        "farm_name": "SDF Farm 0042",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2725,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.421,
+              38.028999999999996
+            ],
+            [
+              -122.379,
+              38.028999999999996
+            ],
+            [
+              -122.379,
+              38.071
+            ],
+            [
+              -122.421,
+              38.071
+            ],
+            [
+              -122.421,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0043",
+        "farm_name": "SDF Farm 0043",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3198,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.371,
+              38.028999999999996
+            ],
+            [
+              -122.329,
+              38.028999999999996
+            ],
+            [
+              -122.329,
+              38.071
+            ],
+            [
+              -122.371,
+              38.071
+            ],
+            [
+              -122.371,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0044",
+        "farm_name": "SDF Farm 0044",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3668,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.321,
+              38.028999999999996
+            ],
+            [
+              -122.279,
+              38.028999999999996
+            ],
+            [
+              -122.279,
+              38.071
+            ],
+            [
+              -122.321,
+              38.071
+            ],
+            [
+              -122.321,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0045",
+        "farm_name": "SDF Farm 0045",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.413,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.271,
+              38.028999999999996
+            ],
+            [
+              -122.229,
+              38.028999999999996
+            ],
+            [
+              -122.229,
+              38.071
+            ],
+            [
+              -122.271,
+              38.071
+            ],
+            [
+              -122.271,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0046",
+        "farm_name": "SDF Farm 0046",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4574,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.221,
+              38.028999999999996
+            ],
+            [
+              -122.179,
+              38.028999999999996
+            ],
+            [
+              -122.179,
+              38.071
+            ],
+            [
+              -122.221,
+              38.071
+            ],
+            [
+              -122.221,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0047",
+        "farm_name": "SDF Farm 0047",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4953,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.171,
+              38.028999999999996
+            ],
+            [
+              -122.129,
+              38.028999999999996
+            ],
+            [
+              -122.129,
+              38.071
+            ],
+            [
+              -122.171,
+              38.071
+            ],
+            [
+              -122.171,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0048",
+        "farm_name": "SDF Farm 0048",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.5049,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.121,
+              38.028999999999996
+            ],
+            [
+              -122.079,
+              38.028999999999996
+            ],
+            [
+              -122.079,
+              38.071
+            ],
+            [
+              -122.121,
+              38.071
+            ],
+            [
+              -122.121,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0049",
+        "farm_name": "SDF Farm 0049",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4746,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.071,
+              38.028999999999996
+            ],
+            [
+              -122.029,
+              38.028999999999996
+            ],
+            [
+              -122.029,
+              38.071
+            ],
+            [
+              -122.071,
+              38.071
+            ],
+            [
+              -122.071,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0050",
+        "farm_name": "SDF Farm 0050",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.4318,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -122.021,
+              38.028999999999996
+            ],
+            [
+              -121.979,
+              38.028999999999996
+            ],
+            [
+              -121.979,
+              38.071
+            ],
+            [
+              -122.021,
+              38.071
+            ],
+            [
+              -122.021,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0051",
+        "farm_name": "SDF Farm 0051",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3862,
+        "risk_level": "medium",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.971,
+              38.028999999999996
+            ],
+            [
+              -121.929,
+              38.028999999999996
+            ],
+            [
+              -121.929,
+              38.071
+            ],
+            [
+              -121.971,
+              38.071
+            ],
+            [
+              -121.971,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0052",
+        "farm_name": "SDF Farm 0052",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.3394,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.921,
+              38.028999999999996
+            ],
+            [
+              -121.879,
+              38.028999999999996
+            ],
+            [
+              -121.879,
+              38.071
+            ],
+            [
+              -121.921,
+              38.071
+            ],
+            [
+              -121.921,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0053",
+        "farm_name": "SDF Farm 0053",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2922,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              38.028999999999996
+            ],
+            [
+              -121.829,
+              38.028999999999996
+            ],
+            [
+              -121.829,
+              38.071
+            ],
+            [
+              -121.871,
+              38.071
+            ],
+            [
+              -121.871,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0054",
+        "farm_name": "SDF Farm 0054",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.2448,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.821,
+              38.028999999999996
+            ],
+            [
+              -121.779,
+              38.028999999999996
+            ],
+            [
+              -121.779,
+              38.071
+            ],
+            [
+              -121.821,
+              38.071
+            ],
+            [
+              -121.821,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0055",
+        "farm_name": "SDF Farm 0055",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1971,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.771,
+              38.028999999999996
+            ],
+            [
+              -121.729,
+              38.028999999999996
+            ],
+            [
+              -121.729,
+              38.071
+            ],
+            [
+              -121.771,
+              38.071
+            ],
+            [
+              -121.771,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0056",
+        "farm_name": "SDF Farm 0056",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1494,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.721,
+              38.028999999999996
+            ],
+            [
+              -121.679,
+              38.028999999999996
+            ],
+            [
+              -121.679,
+              38.071
+            ],
+            [
+              -121.721,
+              38.071
+            ],
+            [
+              -121.721,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0057",
+        "farm_name": "SDF Farm 0057",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.1017,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.671,
+              38.028999999999996
+            ],
+            [
+              -121.629,
+              38.028999999999996
+            ],
+            [
+              -121.629,
+              38.071
+            ],
+            [
+              -121.671,
+              38.071
+            ],
+            [
+              -121.671,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0058",
+        "farm_name": "SDF Farm 0058",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0538,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.621,
+              38.028999999999996
+            ],
+            [
+              -121.579,
+              38.028999999999996
+            ],
+            [
+              -121.579,
+              38.071
+            ],
+            [
+              -121.621,
+              38.071
+            ],
+            [
+              -121.621,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0060",
+        "farm_name": "SDF Farm 0060",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.521,
+              38.028999999999996
+            ],
+            [
+              -121.479,
+              38.028999999999996
+            ],
+            [
+              -121.479,
+              38.071
+            ],
+            [
+              -121.521,
+              38.071
+            ],
+            [
+              -121.521,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0061",
+        "farm_name": "SDF Farm 0061",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.471,
+              38.028999999999996
+            ],
+            [
+              -121.429,
+              38.028999999999996
+            ],
+            [
+              -121.429,
+              38.071
+            ],
+            [
+              -121.471,
+              38.071
+            ],
+            [
+              -121.471,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0062",
+        "farm_name": "SDF Farm 0062",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.421,
+              38.028999999999996
+            ],
+            [
+              -121.379,
+              38.028999999999996
+            ],
+            [
+              -121.379,
+              38.071
+            ],
+            [
+              -121.421,
+              38.071
+            ],
+            [
+              -121.421,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0063",
+        "farm_name": "SDF Farm 0063",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.371,
+              38.028999999999996
+            ],
+            [
+              -121.329,
+              38.028999999999996
+            ],
+            [
+              -121.329,
+              38.071
+            ],
+            [
+              -121.371,
+              38.071
+            ],
+            [
+              -121.371,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "farm_id": "sdf_grid_0064",
+        "farm_name": "SDF Farm 0064",
+        "crop_type": "mixed_ag",
+        "risk_score": 0.0,
+        "risk_level": "low",
+        "top_driver": "fire_proximity",
+        "hour_utc": "2026-02-14T04:00:00+00:00",
+        "cdl_class_code": null,
+        "boundary_source": "inferred_grid_cell"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.321,
+              38.028999999999996
+            ],
+            [
+              -121.279,
+              38.028999999999996
+            ],
+            [
+              -121.279,
+              38.071
+            ],
+            [
+              -121.321,
+              38.071
+            ],
+            [
+              -121.321,
+              38.028999999999996
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
